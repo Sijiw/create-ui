@@ -6,7 +6,7 @@ Create，意为创作、创造，项目名字的寓意也是希望这些组件�
 
 [文档站：](https://github.com/Sijiw/create-ui.git)
 
-> 🪧 Create-UI前身为字节跳动第五届青训营项目-Youth-UI，项目代码以及文档站也是由Youth-UI自己编写的部分迁移而来，代码和文档还存在Youth-UI的痕迹。
+> :grey_exclamation: Create-UI前身为字节跳动第五届青训营项目-Youth-UI，项目代码以及文档站也是由Youth-UI自己编写的部分迁移而来，代码和文档还存在Youth-UI的痕迹。
 
 ## 目前阶段
 
