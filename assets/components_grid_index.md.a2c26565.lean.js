@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n}from"./app.91eb094a.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/grid/index.md"}'),o={name:"components/grid/index.md"};function r(a,s,c,d,i,p){return t(),n("div")}const f=e(o,[["render",r]]);export{m as __pageData,f as default};

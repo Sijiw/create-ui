@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./app.91eb094a.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/radio/index.md"}'),n={name:"components/radio/index.md"};function a(r,s,c,d,i,p){return t(),o("div")}const f=e(n,[["render",a]]);export{m as __pageData,f as default};
