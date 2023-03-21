@@ -1,0 +1,69 @@
+// @import "@/styles/theme/theme.less";
+
+.y-button {
+  // box-sizing: content-box;
+  display: inline-flex;
+  // justify-content: center;
+  // align-items: center;
+  // vertical-align: middle;
+  cursor: pointer;
+  // color
+  --y-hover-bg-color: #fff;
+  --y-button-bg-color: #fff;
+  --y-button-text-color: var(--y-color-primary-text);
+  color: var(--y-button-text-color);
+  background-color: var(--y-button-bg-color);
+  // font
+  font-size: var(--y-font-size);
+  font-weight: 500;
+  // size
+  border: 1px solid var(--y-color-border);
+  border-radius: var(--y-border-radius-base);
+
+  line-height: 1;
+  height: 32px;
+  padding: 8px 16px;
+  transition: all 0.3s;
+  // 相邻button间隔
+  + .y-button {
+    margin-left: 12px;
+  }
+
+  &:hover {
+    background-color: var(--y-button-hover-bg-color);
+  }
+
+  &.round {
+    border-radius: var(--y-border-radius-round);
+  }
+
+  &.circle {
+    border-radius: var(--y-border-radius-circle);
+    padding: 8px;
+    .y-button-icon {
+      margin: 0;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    // background-color: #a8abb2;
+    &:hover {
+      background-image: none;
+    }
+  }
+
+  .y-button-icon {
+    margin-right: 4px;
+  }
+}
+
+.y-button--large {
+  height: 40px;
+  padding: 12px 20px;
+}
+
+.y-button--small {
+  height: 24px;
+  padding: 4px 12px;
+}
