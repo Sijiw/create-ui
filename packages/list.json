@@ -1,0 +1,56 @@
+[
+  {
+    "compName": "Button",
+    "compZhName": "按钮",
+    "compDesc": "这是一个按钮",
+    "compClassName": "button"
+  },
+  {
+    "compName": "Container",
+    "compZhName": "容器",
+    "compDesc": "",
+    "compClassName": "container"
+  },
+  {
+    "compName": "Grid",
+    "compZhName": "布局",
+    "compDesc": "",
+    "compClassName": "grid"
+  },
+  {
+    "compName": "Input",
+    "compZhName": "输入框",
+    "compDesc": "",
+    "compClassName": "input"
+  },
+  {
+    "compName": "Radio",
+    "compZhName": "单选框",
+    "compDesc": "",
+    "compClassName": "radio"
+  },
+  {
+    "compName": "Foo",
+    "compZhName": "测试组件",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "foo"
+  },
+  {
+    "compName": "Progress",
+    "compZhName": "进度条",
+    "compDesc": "进度条组件",
+    "compClassName": "progress"
+  },
+  {
+    "compName": "Avatar",
+    "compZhName": "头像",
+    "compDesc": "头像组件",
+    "compClassName": "avatar"
+  },
+  {
+    "compName": "DatePicker",
+    "compZhName": "日期选择器",
+    "compDesc": "日期选择器组件",
+    "compClassName": "date-picker"
+  }
+]

@@ -1,0 +1,70 @@
+@import '../var.less';
+
+// 主题颜色
+@colors: #409eff, #67c23a, #f56c6c, #e6a23c, #909399;
+@themes: primary, success, danger, warning, info;
+@themeLen: length(@colors);
+// 混合颜色的等级和比例
+@lightLevels: 3, 5, 7, 8, 9;
+@lightRates: 0.3, 0.5, 0.7, 0.8, 0.9;
+@darkLevel: 2;
+@darkRate: 0.2;
+@maxColorLevel: length(@lightLevels);
+// 文字颜色
+@textColor: #303133;
+@textLevel: 1, 2, 3, 4;
+@textNames: primary, regular, secondary, ~'disabled';
+@textLen: length(@textLevel);
+// 边框
+@borderColor: #dcdfe6;
+@borderRate: 5%, 10%;
+@borderLen: length(@borderRate);
+@borderLight: ~'light', ~'lighter';
+@borderDark: ~'dark', ~'darker';
+
+.setLightColors(@state, @color, @level) when(@level <= @maxColorLevel) {
+  @colorLevel: extract(@lightLevels, @level);
+  @rate: extract(@lightRates, @level);
+  .setVarSuffix(~'color-@{state}-light-@{colorLevel}', tint(@color, percentage(@rate)));
+
+  .setLightColors(@state, @color, @level + 1);
+}
+
+.setDarkColors(@state, @color) {
+  @colorLevel: @darkLevel;
+  @rate: @darkRate;
+  .setVarSuffix(~'color-@{state}-dark-@{colorLevel}', shade(@color, percentage(@rate)));
+}
+
+.setThemeColors(@iterThemes) when (@iterThemes <= @themeLen) {
+  @state: extract(@themes, @iterThemes);
+  @color: extract(@colors, @iterThemes);
+  .setVarSuffix(~'color-@{state}', @color);
+  .setDarkColors(@state, @color);
+  .setLightColors(@state, @color, 1);
+  .setThemeColors(@iterThemes + 1);
+}
+
+.setTextColors(@iter) when(@iter <= @textLen) {
+  @level: extract(@textLevel, @iter);
+  @textName: extract(@textNames, @iter);
+  .setVarSuffix(~'color-@{textName}-text', @textColor * @level);
+  .setTextColors(@iter + 1);
+}
+
+.setBorderColors(@iter) when(@iter <= @borderLen) {
+  @lightName: extract(@borderLight, @iter);
+  @darkName: extract(@borderDark, @iter);
+  @rate: extract(@borderRate, @iter);
+  .setVarSuffix(~'color-border-base', @borderColor);
+  .setVarSuffix(~'color-border-@{lightName}', lighten(@borderColor, @rate));
+  .setVarSuffix(~'color-border-@{darkName}', darken(@borderColor, @rate));
+  .setBorderColors(@iter + 1);
+}
+
+:root {
+  .setThemeColors(1);
+  .setTextColors(1);
+  .setVarSuffix(~'color-placeholder-text', #a8abb2);
+  .setBorderColors(1);
+}

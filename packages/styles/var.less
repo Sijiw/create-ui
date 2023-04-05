@@ -1,0 +1,18 @@
+@baseName: c;
+
+.setVarSuffix(@propName, @prop) {
+  --@{baseName}-@{propName}: @prop;
+}
+
+// .getVar(@props, @value) {
+//   @name: ~'--@{baseName}';
+//   @propLen: length(@props);
+//   .forProp(@props, @iter) when (@iter <= @propLen) {
+//     @prop: extract(@props, @iter);
+//     @temp: ~'@{name}-@{prop}';
+//     @name: @temp;
+//     .forProp(@props, @iter + 1);
+//   }
+//   .forProp(@props, 1);
+//   @{name}: @value;
+// }
