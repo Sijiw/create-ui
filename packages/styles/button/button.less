@@ -1,6 +1,6 @@
 @import "../mixins.less";
 
-@block: .useB(button)[return];
+@block: .useComponent(button)[@return];
 .button-mixin() {
   // box-sizing: content-box;
   display: inline-flex;
@@ -9,6 +9,7 @@
   // vertical-align: middle;
   cursor: pointer;
   // color
+  // .set-component-var(hover-bg-color, #fff);
   --y-hover-bg-color: #fff;
   --y-button-bg-color: #fff;
   --y-button-text-color: var(--y-color-primary-text);
