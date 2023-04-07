@@ -4,44 +4,46 @@
 .button-mixin() {
   // box-sizing: content-box;
   display: inline-flex;
-  // justify-content: center;
-  // align-items: center;
-  // vertical-align: middle;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   // color
-  // .set-component-var(hover-bg-color, #fff);
-  --y-hover-bg-color: #fff;
-  --y-button-bg-color: #fff;
-  --y-button-text-color: var(--y-color-primary-text);
-  color: var(--y-button-text-color);
-  background-color: var(--y-button-bg-color);
+  .set-component-var(button, hover-bg-color, #fff);
+  .set-component-var(button, bg-color, #fff);
+  .set-component-var-root(button, text-color, color-primary-text);
+  
+  color: .useComponentCssVar(button, text-color)[@return];
+  background-color: .useComponentCssVar(button, bg-color)[@return];
   // font
-  font-size: var(--y-font-size);
+  font-size: 14px;
   font-weight: 500;
   // size
-  border: 1px solid var(--y-color-border);
-  border-radius: var(--y-border-radius-base);
+  border: 1px solid .useRootCssVar(color-border-base);
+  border-radius: 4px;
 
   line-height: 1;
   height: 32px;
   padding: 8px 16px;
   transition: all 0.3s;
+
   // 相邻button间隔
-  
   + @{block} {
     margin-left: 12px;
   }
 
   &:hover {
-    background-color: var(--y-button-hover-bg-color);
+    background-color: .useComponentCssVar(button, hover-bg-color)[@return];
+    // background-color: var(--y-button-hover-bg-color);
   }
 
   &.round {
-    border-radius: var(--y-border-radius-round);
+    border-radius: 40px;
+    // border-radius: var(--y-border-radius-round);
   }
 
   &.circle {
-    border-radius: var(--y-border-radius-circle);
+    border-radius: 50%;
+    // border-radius: var(--y-border-radius-circle);
     padding: 8px;
     .y-button-icon {
       margin: 0;
@@ -55,19 +57,21 @@
     }
   }
 
-  .y-button-icon {
+  &@{block}--large {
+    height: 40px;
+    padding: 12px 20px;
+  }
+  
+  &@{block}--small {
+    height: 24px;
+    padding: 4px 12px;
+  }
+
+  @{block}-icon:has(+ @{block}-text) {
     margin-right: 4px;
   }
 }
 
-.y-button--large {
-  height: 40px;
-  padding: 12px 20px;
-}
+@buttonMixin: .button-mixin();
 
-.y-button--small {
-  height: 24px;
-  padding: 4px 12px;
-}
-
-.set-component(button, .button-mixin());
+.set-component(button, @buttonMixin);

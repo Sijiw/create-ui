@@ -1,15 +1,10 @@
 <template>
-  <button
-    class="c-button"
-    :class="classes"
-    @click="$emit('click', $event)"
-    :style="buttonStyle"
-  >
-    <span :class="iconClasses" v-if="icon || $slots.icon">
-      <y-icon v-if="icon" :icon="icon" />
+  <button :class="classes" @click="$emit('click', $event)" :style="buttonStyle">
+    <span :class="[iconClasses]" v-if="icon || $slots.icon">
+      <c-icon v-if="icon" :icon="icon" />
       <slot v-else name="icon" />
     </span>
-    <span :class="textClasses">
+    <span :class="textClasses" v-if="$slots.default">
       <slot></slot>
     </span>
   </button>

@@ -1,10 +1,10 @@
 import { App, Plugin } from 'vue'
-import Icon from './src/icon.vue'
+import CIcon from './src/icon.vue'
 
 export const IconPlugin: Plugin = {
   install(app: App) {
-    app.component('CIcon', Icon)
+    app.component('CIcon', CIcon)
   }
 }
 
-export { Icon }
+export { CIcon }

@@ -27,7 +27,7 @@ const _getBEM = (
 }
 
 export const useNamespace = (componentName: string) => {
-  const baseName = `y-${componentName}`
+  const baseName = `c-${componentName}`
 
   // 返回一个`y-${componentName}-${block}`字符串
   const addBlock = (block: string | undefined): string => {
