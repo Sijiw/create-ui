@@ -1,0 +1,48 @@
+.c-switch {
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+
+  transition: all 0.3s;
+  cursor: pointer;
+
+  .c-switch-container {
+    display: flex;
+    width: 48px;
+    height: 100%;
+    padding: 4px 4px;
+    border-radius: 40px;
+    background-color: var(--c-color-placeholder-text);
+
+    &.c-switch--on {
+      justify-content: end;
+    }
+
+    &.c-switch--large {
+      width: 64px;
+      height: 32px;
+
+      .c-switch__inner {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &.c-switch--small {
+      width: 32px;
+      height: 16px;
+
+      .c-switch__inner {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    .c-switch__inner {
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+}

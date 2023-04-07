@@ -13,6 +13,7 @@ declare module 'vue' {
     CProgress: typeof import('@create-ui/components')['Progress']
     CRadio: typeof import('@create-ui/components')['Radio']
     CRow: typeof import('@create-ui/components')['Row']
+    CSwitch: typeof import('@create-ui/components')['Switch']
   }
 }
 

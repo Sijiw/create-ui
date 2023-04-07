@@ -1,0 +1,63 @@
+@import './var.less';
+
+// var '--' prefix attr
+.set-component-var(@varName, @value) {
+  --@{varName}: @value;
+}
+
+.set-component-var-root(@varName, @var) {
+  --@{varName}: ~'var(@{prefix}-@{var})';
+}
+
+.useCssVar(@var) {
+  @return: ~'var(--@{var})';
+}
+
+// bem mixins
+.set-component(@component, @mixin) {
+  .@{baseName}-@{component} {
+    @mixin();
+  }
+}
+
+.set-component-b(@component, @block, @mixin) {
+  .@{baseName}-@{component}-@{block} {
+    @mixin();
+  }
+}
+
+.set-component-e(@component, @element, @mixin) {
+  .@{baseName}-@{component}__@{element} {
+    @mixin();
+  }
+}
+
+.set-component-m(@component, @modifier, @mixin) {
+  .@{baseName}-@{component}__@{modifier} {
+    @mixin();
+  }
+}
+
+.set-component-be(@component, @block, @element, @mixin) {
+  .@{baseName}-@{component}-@{block}__@{element} {
+    @mixin();
+  }
+}
+
+.set-component-bm(@component, @block, @modifier, @mixin) {
+  .@{baseName}-@{component}-@{block}--@{modifier} {
+    @mixin();
+  }
+}
+
+.set-component-em(@component, @element, @modifier, @mixin) {
+  .@{baseName}-@{component}__@{element}--@{modifier} {
+    @mixin();
+  }
+}
+
+.set-component-bem(@component, @block, @element, @modifier, @mixin) {
+  .@{baseName}-@{component}-@{block}__@{element}--@{modifier} {
+    @mixin();
+  }
+}

@@ -16,8 +16,9 @@ import { ContainerPlugin } from './components/Container'
 import { GridPlugin } from './components/Grid'
 import { InputPlugin } from './components/Input'
 import { RadioPlugin } from './components/Radio'
+import { SwitchPlugin } from './components/Switch'
 
-const YouthUIPlugin: Plugin = {
+const CreateUIPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app)
     FooPlugin.install?.(app)
@@ -29,11 +30,12 @@ const YouthUIPlugin: Plugin = {
     GridPlugin.install?.(app)
     InputPlugin.install?.(app)
     RadioPlugin.install?.(app)
+    SwitchPlugin.install?.(app)
     app.component('Icon', Icon)
   }
 }
 
-export default YouthUIPlugin
+export default CreateUIPlugin
 
 export * from './components/Button'
 export * from './components/Foo'
@@ -45,3 +47,4 @@ export * from './components/Container'
 export * from './components/Grid'
 export * from './components/Input'
 export * from './components/Radio'
+export * from './components/Switch'

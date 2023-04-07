@@ -30,6 +30,12 @@
     "compClassName": "radio"
   },
   {
+    "compName": "Switch",
+    "compZhName": "开关",
+    "compDesc": "",
+    "compClassName": "switch"
+  },
+  {
     "compName": "Foo",
     "compZhName": "测试组件",
     "compDesc": "默认：这是一个新组件",
