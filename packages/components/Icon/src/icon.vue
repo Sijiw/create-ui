@@ -26,7 +26,7 @@ const style = computed<CSSProperties>(() => {
 </script>
 
 <style scoped lang="less">
-.y-icon {
+.c-icon {
   display: inline-flex;
   // justify-content: center;
   // align-items: center;
