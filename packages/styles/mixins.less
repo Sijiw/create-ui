@@ -1,16 +1,24 @@
 @import './var.less';
 
 // var '--' prefix attr
-.set-component-var(@varName, @value) {
-  --@{varName}: @value;
+.set-component-var(@component, @varName, @value) {
+  @{prefix}-@{component}-@{varName}: @value;
 }
 
-.set-component-var-root(@varName, @var) {
-  --@{varName}: ~'var(@{prefix}-@{var})';
+.set-component-var-root(@component, @varName, @var) {
+  @{prefix}-@{component}-@{varName}: ~'var(@{prefix}-@{var})';
 }
 
 .useCssVar(@var) {
   @return: ~'var(--@{var})';
+}
+
+.useComponentCssVar(@component, @var) {
+  @return: ~'var(@{prefix}-@{component}-@{var});'
+}
+
+.useRootCssVar(@var) {
+  @return: ~'var(@{prefix}-@{var})'
 }
 
 // bem mixins
