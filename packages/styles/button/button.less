@@ -1,6 +1,7 @@
 @import "../mixins.less";
 
-@block: .useComponent(button)[@return];
+@button: .useComponent(button)[@return];
+@icon: .useComponent(icon)[@return];
 .button-mixin() {
   // box-sizing: content-box;
   display: inline-flex;
@@ -27,7 +28,7 @@
   transition: all 0.3s;
 
   // 相邻button间隔
-  + @{block} {
+  + .@{button} {
     margin-left: 12px;
   }
 
@@ -57,27 +58,39 @@
     }
   }
 
-  &@{block}--large {
+  &.@{button}--large {
     height: 40px;
     padding: 12px 20px;
   }
   
-  &@{block}--small {
+  &.@{button}--small {
     height: 24px;
     padding: 4px 12px;
   }
 
-  @{block}-icon:has(+ @{block}-text) {
+  .@{button}-icon:has(+ .@{button}-text) {
     margin-right: 4px;
   }
 
-  .c-icon {
+  .@{icon} {
     display: inline-flex;
     justify-content: center;
     align-items: center;
   }
 
-  @{block}-icon {
+  .@{button}-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .@{icon} {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @{button}-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
