@@ -62,30 +62,34 @@
   }
 }
 
+.useComponent(@component) {
+  @return: ~'.@{baseName}-@{component}'
+}
+
 .useB(@component, @block) {
-  @return: ~'.@{baseName}-@{block}'
+  @return: ~'.@{baseName}-@{component}-@{block}'
 }
 
 .useE(@component, @element) {
-  @return: ~'.@{baseName}__@{element}'
+  @return: ~'.@{baseName}-@{component}__@{element}'
 }
 
 .useM(@component, @modifier) {
-  @return: ~'.@{baseName}--@{modifier}'
+  @return: ~'.@{baseName}-@{component}--@{modifier}'
 }
 
 .useBE(@component, @block, @element) {
-  @return: ~'.@{baseName}-@{block}__@{element}'
+  @return: ~'.@{baseName}-@{component}-@{block}__@{element}'
 }
 
 .useBM(@component, @block, @modifier) {
-  @return: ~'.@{baseName}-@{block}--@{modifier}'
+  @return: ~'.@{baseName}-@{component}-@{block}--@{modifier}'
 }
 
 .useEM(@component, @element, @modifier) {
-  @return: ~'.@{baseName}__@{element}--@{modifier}'
+  @return: ~'.@{baseName}-@{component}__@{element}--@{modifier}'
 }
 
 .useBEM(@component, @block, @element, @modifier) {
-  @return: ~'.@{baseName}-@{block}__@{element}--@{modifier}'
+  @return: ~'.@{baseName}-@{component}-@{block}__@{element}--@{modifier}'
 }
