@@ -1,6 +1,6 @@
 <template>
   <div :class="classes">
-    <div class="y-input-prefix">
+    <div :class="prefixClasses">
       <c-icon :icon="prefixIcon" v-if="prefixIcon && !$slots.prefixIcon" />
       <slot name="prefixIcon" />
     </div>
@@ -16,13 +16,13 @@
       @blur="handleBlur"
     />
     <div
-      class="y-input-clearable"
+      :class="clearableClasses"
       v-show="clearable && clearVisible"
       @click="handleClear"
     >
       <c-icon icon="ic:round-clear" clickable></c-icon>
     </div>
-    <div class="y-input-suffix">
+    <div :class="suffixClasses">
       <c-icon :icon="suffixIcon" v-if="suffixIcon && !$slots.suffixIcon" />
       <slot name="suffixIcon" />
     </div>
@@ -49,6 +49,9 @@ const classes = computed(() => {
   return res
 })
 const inputClasses = [ns.addBlock('inner')]
+const clearableClasses = [ns.addBlock('clearable')]
+const prefixClasses = [ns.addBlock('prefix')]
+const suffixClasses = [ns.addBlock('suffix')]
 
 const handleFocus = () => {
   isFocus.value = true
