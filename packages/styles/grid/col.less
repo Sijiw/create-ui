@@ -1,15 +1,19 @@
+@import "../mixins.less";
+
+@col: .useComponent(col)[@return];
+
 @span: 24;
 @offset: 24;
 
 .span-loop(@span) when (@span > 0) {
-  .y-col--span-@{span} {
+  .@{col}--span-@{span} {
     max-width: (1 * @span / 24 * 100%);
   }
   .span-loop(@span - 1);
 }
 
 .offset-loop(@offset) when(@offset > 0) {
-  .y-col--offset-@{offset} {
+  .@{col}--offset-@{offset} {
     margin-left: 100% * @span / 2400%;
   }
 }
