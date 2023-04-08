@@ -26,6 +26,7 @@
   height: 32px;
   padding: 8px 16px;
   transition: all 0.3s;
+  // transition: transform .1s;
 
   // 相邻button间隔
   + .@{button} {
@@ -34,17 +35,18 @@
 
   &:hover {
     background-color: .useComponentCssVar(button, hover-bg-color)[@return];
-    // background-color: var(--y-button-hover-bg-color);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 
   &.round {
     border-radius: 40px;
-    // border-radius: var(--y-border-radius-round);
   }
 
   &.circle {
     border-radius: 50%;
-    // border-radius: var(--y-border-radius-circle);
     padding: 8px;
     .y-button-icon {
       margin: 0;
@@ -55,6 +57,9 @@
     cursor: not-allowed;
     &:hover {
       background-image: none;
+    }
+    &:active {
+      transform: none;
     }
   }
 
@@ -73,27 +78,11 @@
   }
 
   .@{icon} {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    .hv-center-inline-flex();
   }
 
   .@{button}-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .@{icon} {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @{button}-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    .hv-center-inline-flex();
   }
 }
 
