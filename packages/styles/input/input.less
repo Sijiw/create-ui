@@ -1,4 +1,7 @@
-.y-input {
+@import "../mixins.less";
+
+@input: .useComponent(input);
+.input-mixin() {
   display: flex;
   align-items: center;
 
@@ -20,7 +23,7 @@
   &.disabled {
     background-color: #f3f4f6;
     cursor: not-allowed;
-    .y-input-inner {
+    .@{input}-inner {
       cursor: inherit;
       background-color: inherit;
     }
@@ -29,13 +32,13 @@
     }
   }
 
-  .y-input-prefix {
+  .@{input}-prefix {
     display: inline-flex;
     align-items: center;
     margin: auto 5px;
   }
 
-  .y-input-inner {
+  .@{input}-inner {
     flex: 1;
     height: 100%;
     border: none;
@@ -51,14 +54,16 @@
     }
   }
 
-  .y-input-clearable {
+  .@{input}-clearable {
     display: flex;
     align-items: center;
   }
 
-  .y-input-suffix {
+  .@{input}-suffix {
     display: flex;
     align-items: center;
     margin-right: 5px;
   }
 }
+
+.set-component(input, .input-mixin());
