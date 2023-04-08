@@ -1,4 +1,9 @@
-.c-switch {
+@import "../mixins.less";
+
+@switch: .useComponent(switch)[@return];
+.switch-mixin() {
+  .set-component-var-root(switch, off-color, color-placeholder-text);
+  .set-component-var-root(switch, on-color, color-primary);
   height: 24px;
   display: inline-flex;
   align-items: center;
@@ -6,43 +11,61 @@
   transition: all 0.3s;
   cursor: pointer;
 
-  .c-switch-container {
+  .@{switch}-prefix {
+    margin-right: 4px;
+  }
+  .@{switch}-suffix {
+    margin-left: 4px;
+  }
+
+  .@{switch}-container {
     display: flex;
+    position: relative;
     width: 48px;
     height: 100%;
-    padding: 4px 4px;
+    padding: 4px;
     border-radius: 40px;
-    background-color: var(--c-color-placeholder-text);
+    
+    background-color: .useComponentCssVar(switch, off-color)[@return];
+    transition: all .3s;
 
-    &.c-switch--on {
-      justify-content: end;
+    .@{switch}__inner {
+      position: absolute;
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: all .3s;
     }
 
-    &.c-switch--large {
+    &.@{switch}--on {
+      background-color: .useComponentCssVar(switch, on-color)[@return];
+      .@{switch}__inner {
+        left: calc(100% - 20px);
+      }
+    }
+
+    &.@{switch}--large {
       width: 64px;
       height: 32px;
 
-      .c-switch__inner {
+      .@{switch}__inner {
         width: 24px;
         height: 24px;
       }
     }
 
-    &.c-switch--small {
+    &.@{switch}--small {
       width: 32px;
       height: 16px;
 
-      .c-switch__inner {
+      .@{switch}__inner {
         width: 8px;
         height: 8px;
       }
     }
-
-    .c-switch__inner {
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border-radius: 50%;
-    }
   }
 }
+
+.set-component(switch, .switch-mixin());
