@@ -1,11 +1,11 @@
 <template>
-  <div class="y-radio-group">
+  <div :class="groupClasses">
     <label
       :class="[ns.baseName, ns.getClass('checked', currentValue == item.value)]"
       v-for="(item, index) in group"
       :key="index"
     >
-      <span class="y-radio__input">
+      <span :class="inputClasses">
         <input
           :class="[ns.addElement('originInput')]"
           type="radio"
@@ -13,9 +13,9 @@
           :value="item.value"
           @input="handleInput"
         />
-        <span class="y-radio__inner"></span>
+        <span :class="innerClasses"></span>
       </span>
-      <span class="y-radio__label">
+      <span :class="labelClasses">
         {{ item.label }}
       </span>
     </label>
@@ -30,6 +30,11 @@ import { radioProps } from './radio'
 const props = defineProps(radioProps)
 const ns = useNamespace('radio')
 const emits = defineEmits(['update:modelValue'])
+
+const groupClasses = [ns.addBlock('group')]
+const inputClasses = [ns.addElement('input')]
+const innerClasses = [ns.addElement('inner')]
+const labelClasses = [ns.addElement('label')]
 
 const currentValue = ref(props.group[0].value)
 

@@ -1,4 +1,7 @@
-.y-radio {
+@import "../mixins.less";
+
+@radio: .useComponent(radio)[@return];
+.radio-mixin() {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -6,19 +9,19 @@
   height: 32px;
 
   &:hover {
-    .y-radio__inner {
+    .@{radio}__inner {
       border-color: var(--y-color-primary);
     }
   }
 
   &.checked {
     &:hover {
-      .y-radio__inner {
+      .@{radio}__inner {
         border-color: transparent;
       }
     }
 
-    .y-radio__inner {
+    .@{radio}__inner {
       background-color: var(--y-color-primary);
       &::after {
         position: absolute;
@@ -35,13 +38,13 @@
     }
   }
 
-  .y-radio__input {
+  .@{radio}__input {
     position: relative;
     display: inline-flex;
     vertical-align: middle;
     // width: 14px;
     // height: 14px;
-    .y-radio__originInput {
+    .@{radio}__originInput {
       position: absolute;
       top: 0;
       left: 0;
@@ -49,7 +52,7 @@
       z-index: -1;
       outline: none;
     }
-    .y-radio__inner {
+    .@{radio}__inner {
       cursor: pointer;
       display: inline-block;
       width: 14px;
@@ -60,9 +63,11 @@
     }
   }
 
-  .y-radio__label {
+  .@{radio}__label {
     cursor: pointer;
     padding-left: 8px;
     padding-right: 24px;
   }
 }
+
+.set-component(radio, .radio-mixin());
