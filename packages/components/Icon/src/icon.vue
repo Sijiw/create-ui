@@ -25,32 +25,4 @@ const style = computed<CSSProperties>(() => {
 })
 </script>
 
-<style scoped lang="less">
-.c-icon {
-  display: inline-flex;
-  // justify-content: center;
-  // align-items: center;
-  position: relative;
-
-  color: inherit;
-  font-size: inherit;
-  width: 1em;
-  height: 1em;
-  transition: all 0.25s;
-
-  &.clickable {
-    --hover-color: #409eef;
-
-    cursor: pointer;
-
-    &:hover {
-      color: var(--hover-color);
-    }
-  }
-
-  svg {
-    width: 1em;
-    height: 1em;
-  }
-}
-</style>
+<style scoped lang="less"></style>
