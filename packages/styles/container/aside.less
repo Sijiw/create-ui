@@ -1,3 +1,8 @@
-.y-aside {
+@import "../mixins.less";
+
+@aside: .useComponent(aside)[@return];
+.aside-mixin() {
   width: 300px;
 }
+
+.set-component(aside, .aside-mixin());

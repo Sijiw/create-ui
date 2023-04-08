@@ -1,4 +1,9 @@
-.y-main {
+@import "../mixins.less";
+
+@main: .useComponent(main)[@return];
+.main-mixin() {
   padding: 20px;
   flex: 1;
 }
+
+.set-component(main, .main-mixin());

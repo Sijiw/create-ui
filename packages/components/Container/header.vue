@@ -1,13 +1,17 @@
 <template>
-  <header class="y-header">
+  <header :class="[ns.baseName]">
     <slot />
   </header>
 </template>
 
 <script lang="ts" setup>
+import { useNamespace } from 'packages/hooks/use-namespace'
+
 defineOptions({
   name: 'YHeader'
 })
+
+const ns = useNamespace('header')
 </script>
 
 <style scoped lang="less">

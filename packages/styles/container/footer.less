@@ -1,4 +1,7 @@
-.y-footer {
+@import "../mixins.less";
+
+@footer: .useComponent(footer)[@return];
+.footer-mixin() {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,3 +9,5 @@
   height: 60px;
   padding: 20px;
 }
+
+.set-component(footer, .footer-mixin());

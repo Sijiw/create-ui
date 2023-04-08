@@ -1,4 +1,7 @@
-.y-header {
+@import "../mixins.less";
+
+@header: .useComponent(header)[@return];
+.header-mixin() {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,3 +9,5 @@
   height: 60px;
   padding: 20px;
 }
+
+.set-component(header, .header-mixin());

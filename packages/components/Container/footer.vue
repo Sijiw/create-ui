@@ -1,13 +1,17 @@
 <template>
-  <footer class="y-footer">
+  <footer :class="[ns.baseName]">
     <slot />
   </footer>
 </template>
 
 <script lang="ts" setup>
+import { useNamespace } from 'packages/hooks/use-namespace'
+
 defineOptions({
-  name: 'YFooter'
+  name: 'CFooter'
 })
+
+const ns = useNamespace('footer')
 </script>
 
 <style scoped lang="less">

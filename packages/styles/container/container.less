@@ -1,8 +1,13 @@
-.y-container {
+@import "../mixins.less";
+
+@container: .useComponent(container)[@return];
+.container-mixin() {
   display: flex;
   flex: 1;
+
+  &.isVertical {
+    flex-direction: column;
+  }
 }
 
-.isVertical {
-  flex-direction: column;
-}
+.set-component(container, .container-mixin());
