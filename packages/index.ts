@@ -7,6 +7,7 @@ import 'packages/styles/theme/color.less'
 import { Icon } from '@iconify/vue'
 
 import { ButtonPlugin } from './components/Button'
+import { CheckboxPlugin } from './components/Checkbox'
 import { FooPlugin } from './components/Foo'
 import { ProgressPlugin } from './components/Progress'
 import { AvatarPlugin } from './components/Avatar'
@@ -21,6 +22,7 @@ import { SwitchPlugin } from './components/Switch'
 const CreateUIPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app)
+    CheckboxPlugin.install?.(app)
     FooPlugin.install?.(app)
     ProgressPlugin.install?.(app)
     AvatarPlugin.install?.(app)
@@ -38,6 +40,7 @@ const CreateUIPlugin: Plugin = {
 export default CreateUIPlugin
 
 export * from './components/Button'
+export * from './components/Checkbox'
 export * from './components/Foo'
 export * from './components/Progress'
 export * from './components/Avatar'

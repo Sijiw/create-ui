@@ -25,4 +25,6 @@ const style = computed<CSSProperties>(() => {
 })
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+@import 'packages/styles/icon/icon.less';
+</style>

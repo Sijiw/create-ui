@@ -18,7 +18,7 @@ import {
   useDisabledStyle
 } from './button'
 import { useNamespace } from 'packages/hooks/use-namespace'
-import { CIcon } from 'packages/components/Icon'
+import { Icon } from 'packages/components/Icon'
 
 const props = defineProps(buttonProps)
 const { type, size, circle, round, disabled } = props
