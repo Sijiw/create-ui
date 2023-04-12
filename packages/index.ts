@@ -8,6 +8,7 @@ import { Icon } from '@iconify/vue'
 
 import { ButtonPlugin } from './components/Button'
 import { CheckboxPlugin } from './components/Checkbox'
+import { CheckboxGroupPlugin } from './components/CheckboxGroup'
 import { FooPlugin } from './components/Foo'
 import { ProgressPlugin } from './components/Progress'
 import { AvatarPlugin } from './components/Avatar'
@@ -23,6 +24,7 @@ const CreateUIPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app)
     CheckboxPlugin.install?.(app)
+    CheckboxGroupPlugin.install?.(app)
     FooPlugin.install?.(app)
     ProgressPlugin.install?.(app)
     AvatarPlugin.install?.(app)
@@ -41,6 +43,7 @@ export default CreateUIPlugin
 
 export * from './components/Button'
 export * from './components/Checkbox'
+export * from './components/CheckboxGroup'
 export * from './components/Foo'
 export * from './components/Progress'
 export * from './components/Avatar'

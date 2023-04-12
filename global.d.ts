@@ -3,6 +3,8 @@ declare module 'vue' {
     CAvatar: typeof import('@create-ui/components')['Avatar']
     CAside: typeof import('@create-ui/components')['Aside']
     CButton: typeof import('@create-ui/components')['Button']
+    CCheckbox: typeof import('@create-ui/components')['Checkbox']
+    CCheckboxGroup: typeof import('@create-ui/components')['CheckboxGroup']
     CCol: typeof import('@create-ui/components')['Col']
     CContainer: typeof import('@create-ui/components')['Container']
     CFooter: typeof import('@create-ui/components')['Footer']

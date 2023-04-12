@@ -14,7 +14,7 @@
 import { useNamespace } from '@create-ui/hooks'
 import { checkboxGroupProps } from './checkbox-group'
 import { reactive } from 'vue'
-import CCheckbox from './checkbox.vue'
+import CCheckbox from '@create-ui/components/Checkbox/src/checkbox.vue'
 
 const ns = useNamespace('checkbox-group')
 const props = defineProps(checkboxGroupProps)
