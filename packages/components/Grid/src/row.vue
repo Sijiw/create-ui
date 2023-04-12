@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { rawProps } from './row'
-import { useNamespace } from 'packages/hooks/use-namespace'
+import { useNamespace } from '@create-ui/hooks'
 import { computed } from 'vue'
 
 const props = defineProps(rawProps)

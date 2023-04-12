@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from 'packages/hooks/use-namespace'
+import { useNamespace } from '@create-ui/hooks'
 import { checkboxGroupProps } from './checkbox-group'
 import { reactive } from 'vue'
 import CCheckbox from './checkbox.vue'

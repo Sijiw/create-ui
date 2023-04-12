@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { Component, computed, useSlots, VNode } from 'vue'
-import { useNamespace } from 'packages/hooks/use-namespace'
+import { useNamespace } from '@create-ui/hooks'
 
 const ns = useNamespace('container')
 const slots = useSlots()

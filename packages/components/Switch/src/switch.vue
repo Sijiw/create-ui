@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
+import { useNamespace } from '@create-ui/hooks'
 import { computed, ref } from 'vue'
 import { switchProps } from './switch'
-import { useNamespace } from 'packages/hooks/use-namespace'
 
 const props = defineProps(switchProps)
 const emits = defineEmits(['click', 'update:modelValue'])

@@ -20,7 +20,7 @@
 import DateTableItemComp from './DateTableItem.vue'
 import { dateTableContentProps } from './DateTable'
 import { DateTableItem, getDate } from './date-utils'
-import { useNamespace } from 'packages/hooks/use-namespace'
+import { useNamespace } from '@create-ui/hooks'
 import { computed, ref } from 'vue'
 
 const ns = useNamespace('table')

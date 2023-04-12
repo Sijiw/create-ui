@@ -7,6 +7,7 @@ importers:
       '@babel/core': ^7.20.12
       '@babel/eslint-parser': ^7.19.1
       '@create-ui/components': workspace:^0.0.0
+      '@create-ui/hooks': workspace:^0.0.0
       '@iconify/vue': ^4.1.0
       '@types/less': ^3.0.3
       '@types/node': ^18.11.18
@@ -41,6 +42,7 @@ importers:
       vue-tsc: ^1.0.9
     dependencies:
       '@create-ui/components': link:packages/components
+      '@create-ui/hooks': link:packages/hooks
       '@vue/shared': 3.2.47
       '@vueuse/core': 9.13.0_vue@3.2.47
       vue: 3.2.47

@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { computed, CSSProperties } from 'vue'
 import { iconProps } from './icon'
-import { useNamespace } from 'packages/hooks/use-namespace'
+import { useNamespace } from '@create-ui/hooks'
 
 const ns = useNamespace('icon')
 const props = defineProps(iconProps)
