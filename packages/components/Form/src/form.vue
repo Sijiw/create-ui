@@ -1,5 +1,6 @@
 <template>
   <div :class="ns.baseName">
+    <slot />
   </div>
 </template>
 
@@ -11,5 +12,4 @@ const ns = useNamespace('form')
 const props = defineProps(formProps)
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import eslintPlugin from 'vite-plugin-eslint'
-import Markdown from 'vite-plugin-md'
 import defineOptions from 'unplugin-vue-define-options/vite'
 
 // https://vitejs.dev/config/
@@ -14,8 +13,7 @@ export default defineConfig({
     defineOptions(),
     eslintPlugin({
       include: ['src/**/*.ts', 'src/**/*.vue', 'src/*.ts', 'src/*.vue']
-    }),
-    Markdown()
+    })
   ],
   resolve: {
     alias: {

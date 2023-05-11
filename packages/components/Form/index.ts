@@ -1,5 +1,5 @@
 import { App, Plugin } from 'vue'
-import Form from './src/index.vue'
+import Form from './src/form.vue'
 
 export const FormPlugin: Plugin = {
   install(app: App) {
