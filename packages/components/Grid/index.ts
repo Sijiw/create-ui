@@ -9,4 +9,6 @@ export const GridPlugin: Plugin = {
   }
 }
 
+export default GridPlugin
+
 export { Row, Col }

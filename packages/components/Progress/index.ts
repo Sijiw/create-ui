@@ -7,4 +7,6 @@ export const ProgressPlugin: Plugin = {
   }
 }
 
+export default ProgressPlugin
+
 export { Progress }

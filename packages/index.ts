@@ -6,35 +6,39 @@ import 'packages/styles/theme/theme.less'
 import 'packages/styles/theme/color.less'
 import { Icon } from '@iconify/vue'
 
-import { ButtonPlugin } from './components/Button'
-import { CheckboxPlugin } from './components/Checkbox'
-import { CheckboxGroupPlugin } from './components/CheckboxGroup'
-import { FooPlugin } from './components/Foo'
-import { ProgressPlugin } from './components/Progress'
-import { AvatarPlugin } from './components/Avatar'
-import { DatePickerPlugin } from './components/DatePicker'
-import { IconPlugin } from './components/Icon'
-import { ContainerPlugin } from './components/Container'
-import { GridPlugin } from './components/Grid'
-import { InputPlugin } from './components/Input'
-import { RadioPlugin } from './components/Radio'
-import { SwitchPlugin } from './components/Switch'
+// import { ButtonPlugin } from './components/Button'
+// import { CheckboxPlugin } from './components/Checkbox'
+// import { CheckboxGroupPlugin } from './components/CheckboxGroup'
+// import { FooPlugin } from './components/Foo'
+// import { ProgressPlugin } from './components/Progress'
+// import { AvatarPlugin } from './components/Avatar'
+// import { DatePickerPlugin } from './components/DatePicker'
+// import { IconPlugin } from './components/Icon'
+// import { ContainerPlugin } from './components/Container'
+// import { GridPlugin } from './components/Grid'
+// import { InputPlugin } from './components/Input'
+// import { RadioPlugin } from './components/Radio'
+// import { SwitchPlugin } from './components/Switch'
+import components from './components'
 
 const CreateUIPlugin: Plugin = {
   install(app: App) {
-    ButtonPlugin.install?.(app)
-    CheckboxPlugin.install?.(app)
-    CheckboxGroupPlugin.install?.(app)
-    FooPlugin.install?.(app)
-    ProgressPlugin.install?.(app)
-    AvatarPlugin.install?.(app)
-    DatePickerPlugin.install?.(app)
-    IconPlugin.install?.(app)
-    ContainerPlugin.install?.(app)
-    GridPlugin.install?.(app)
-    InputPlugin.install?.(app)
-    RadioPlugin.install?.(app)
-    SwitchPlugin.install?.(app)
+    // ButtonPlugin.install?.(app)
+    // CheckboxPlugin.install?.(app)
+    // CheckboxGroupPlugin.install?.(app)
+    // FooPlugin.install?.(app)
+    // ProgressPlugin.install?.(app)
+    // AvatarPlugin.install?.(app)
+    // DatePickerPlugin.install?.(app)
+    // IconPlugin.install?.(app)
+    // ContainerPlugin.install?.(app)
+    // GridPlugin.install?.(app)
+    // InputPlugin.install?.(app)
+    // RadioPlugin.install?.(app)
+    // SwitchPlugin.install?.(app)
+    for (const component of components) {
+      app.use(component)
+    }
     app.component('Icon', Icon)
   }
 }

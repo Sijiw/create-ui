@@ -7,4 +7,6 @@ export const InputPlugin: Plugin = {
   }
 }
 
+export default InputPlugin
+
 export { Input }

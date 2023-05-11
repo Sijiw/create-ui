@@ -7,4 +7,6 @@ export const CheckboxGroupPlugin: Plugin = {
   }
 }
 
+export default CheckboxGroupPlugin
+
 export { CheckboxGroup }

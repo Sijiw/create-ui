@@ -58,5 +58,11 @@
     "compZhName": "日期选择器",
     "compDesc": "日期选择器组件",
     "compClassName": "date-picker"
+  },
+  {
+    "compName": "Checkbox",
+    "compZhName": "多选框",
+    "compDesc": "",
+    "compClassName": "checkbox"
   }
 ]

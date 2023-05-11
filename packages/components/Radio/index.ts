@@ -7,4 +7,6 @@ export const RadioPlugin: Plugin = {
   }
 }
 
+export default RadioPlugin
+
 export { Radio }

@@ -7,5 +7,7 @@ export const SwitchPlugin: Plugin = {
   }
 }
 
+export default SwitchPlugin
+
 export { Switch }
 export * from './src/switch'

@@ -15,4 +15,6 @@ export const ContainerPlugin: Plugin = {
   }
 }
 
+export default ContainerPlugin
+
 export { Container, Aside, Header, Main, Footer }

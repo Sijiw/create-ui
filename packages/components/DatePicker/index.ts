@@ -7,4 +7,6 @@ export const DatePickerPlugin: Plugin = {
   }
 }
 
+export default DatePickerPlugin
+
 export { DatePicker }

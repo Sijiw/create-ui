@@ -7,4 +7,6 @@ export const AvatarPlugin: Plugin = {
   }
 }
 
+export default AvatarPlugin
+
 export { Avatar }

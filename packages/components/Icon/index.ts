@@ -7,4 +7,6 @@ export const IconPlugin: Plugin = {
   }
 }
 
+export default IconPlugin
+
 export { Icon }

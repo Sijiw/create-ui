@@ -8,6 +8,8 @@ export const ButtonPlugin: Plugin = {
   }
 }
 
+export default ButtonPlugin
+
 export { Button }
 export * from './src/button'
 export type { ButtonInstance }
