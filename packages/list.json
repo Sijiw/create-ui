@@ -64,5 +64,11 @@
     "compZhName": "多选框",
     "compDesc": "",
     "compClassName": "checkbox"
+  },
+  {
+    "compName": "Form",
+    "compZhName": "表单",
+    "compDesc": "表单组件",
+    "compClassName": "form"
   }
 ]
