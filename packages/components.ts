@@ -14,4 +14,19 @@ import CProgress from '@create-ui/components/Progress'
 import CRadio from '@create-ui/components/Radio'
 import CSwitch from '@create-ui/components/Switch'
 
-export default [CAvatar,CButton,CCheckbox,CCheckboxGroup,CContainer,CDatePicker,CFoo,CForm,CGrid,CIcon,CInput,CProgress,CRadio,CSwitch] as Plugin[]
+export default [
+  CAvatar,
+  CButton,
+  CCheckbox,
+  CCheckboxGroup,
+  CContainer,
+  CDatePicker,
+  CFoo,
+  CForm,
+  CGrid,
+  CIcon,
+  CInput,
+  CProgress,
+  CRadio,
+  CSwitch
+] as Plugin[]

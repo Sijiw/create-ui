@@ -1,0 +1,37 @@
+@import "../mixins.less";
+
+@form-item: .useComponent(form-item)[@return];
+
+.form-item-mixin() {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  margin: 12px 0;
+
+  .@{form-item}-label {
+    display: inline-flex;
+    justify-content: start;
+    width: 88px;
+    margin-right: 12px;
+  }
+
+  .@{form-item}-label--required {
+    color: red;
+    font-size: 14px;
+    margin-right: 4px;
+  }
+  
+  &.end {
+    .@{form-item}-label {
+      justify-content: end;
+    }
+  }
+
+  &.top {
+    display: block;
+  }
+}
+
+@formItemMixin: .form-item-mixin();
+
+.set-component(form-item, @formItemMixin);

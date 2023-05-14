@@ -20,6 +20,7 @@
     "@create-ui/hooks": "workspace:^0.0.0",
     "@vue/shared": "^3.2.47",
     "@vueuse/core": "^9.13.0",
+    "async-validator": "^4.2.5",
     "vue": "^3.2.41"
   },
   "devDependencies": {
