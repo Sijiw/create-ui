@@ -9,6 +9,7 @@ import CFoo from '@create-ui/components/Foo'
 import CForm from '@create-ui/components/Form'
 import CGrid from '@create-ui/components/Grid'
 import CIcon from '@create-ui/components/Icon'
+import CImage from '@create-ui/components/Image'
 import CInput from '@create-ui/components/Input'
 import CProgress from '@create-ui/components/Progress'
 import CRadio from '@create-ui/components/Radio'
@@ -25,6 +26,7 @@ export default [
   CForm,
   CGrid,
   CIcon,
+  CImage,
   CInput,
   CProgress,
   CRadio,

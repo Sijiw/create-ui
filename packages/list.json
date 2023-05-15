@@ -70,5 +70,11 @@
     "compZhName": "表单",
     "compDesc": "表单组件",
     "compClassName": "form"
+  },
+  {
+    "compName": "Image",
+    "compZhName": "图片",
+    "compDesc": "图片组件",
+    "compClassName": "image"
   }
 ]
