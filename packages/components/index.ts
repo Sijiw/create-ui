@@ -1,6 +1,6 @@
 export * from './Avatar'
-export * from './Bar'
 export * from './Button'
+export * from './Card'
 export * from './Checkbox'
 export * from './CheckboxGroup'
 export * from './Container'

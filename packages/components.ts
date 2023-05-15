@@ -1,6 +1,7 @@
 import { Plugin } from 'vue'
 import CAvatar from '@create-ui/components/Avatar'
 import CButton from '@create-ui/components/Button'
+import CCard from '@create-ui/components/Card'
 import CCheckbox from '@create-ui/components/Checkbox'
 import CCheckboxGroup from '@create-ui/components/CheckboxGroup'
 import CContainer from '@create-ui/components/Container'
@@ -18,6 +19,7 @@ import CSwitch from '@create-ui/components/Switch'
 export default [
   CAvatar,
   CButton,
+  CCard,
   CCheckbox,
   CCheckboxGroup,
   CContainer,

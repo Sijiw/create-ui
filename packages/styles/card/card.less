@@ -1,0 +1,11 @@
+@import "../mixins.less";
+
+@card: .useComponent(card)[@return];
+
+.card-mixin() {
+
+}
+
+@cardMixin: .card-mixin();
+
+.set-component(card, @cardMixin);

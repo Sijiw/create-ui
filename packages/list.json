@@ -76,5 +76,11 @@
     "compZhName": "图片",
     "compDesc": "图片组件",
     "compClassName": "image"
+  },
+  {
+    "compName": "Card",
+    "compZhName": "卡片",
+    "compDesc": "卡片组件",
+    "compClassName": "card"
   }
 ]
