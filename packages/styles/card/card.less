@@ -3,7 +3,49 @@
 @card: .useComponent(card)[@return];
 
 .card-mixin() {
+  display: inline-flex;
+  flex-direction: column;
+  --card-border-color: .useRootCssVar(color-border-light)[@return];
+  --body-shadow: 0 0 4px 4px var(--card-border-color);
 
+  width: 320px;
+  padding: 12px;
+  border: 1px solid var(--card-border-color);
+  
+  box-shadow: var(--body-shadow);
+
+  transition: all .25s;
+
+  // header class style
+  .@{card}-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid .useRootCssVar(color-border-dark)[@return] ;
+  }
+
+  // never use shadow
+  &.@{card}--shadow-never {
+    box-shadow: none;
+  }
+
+  // use shadow while hover
+  &.@{card}--shadow-hover {
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: var(--body-shadow);
+    }
+  }
+
+  &.@{card}--clickable {
+    .clickable();
+  }
+
+  & +.@{card} {
+    margin: 12px 0 0 12px;
+  }
 }
 
 @cardMixin: .card-mixin();
