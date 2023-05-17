@@ -1,21 +1,23 @@
 <template>
-  <table :class="ns.baseName">
-    <thead :class="ns.addBlock('head')">
-      <tr>
-        <slot />
-      </tr>
-    </thead>
-    <tbody :class="ns.addBlock('body')">
-      <tr
-        v-for="(dataItem, dataIndex) in data"
-        :class="ns.getClass(ns.addModifier('stripe'), dataIndex % 2 === 1)"
-      >
-        <td v-for="prop in columnProps">
-          {{ dataItem[prop] }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div :class="ns.baseName" :style="containerStyle">
+    <table :class="ns.addBlock('container')">
+      <thead :class="ns.addBlock('head')">
+        <tr>
+          <slot />
+        </tr>
+      </thead>
+      <tbody :class="ns.addBlock('body')">
+        <tr
+          v-for="(dataItem, dataIndex) in data"
+          :class="ns.getClass(ns.addModifier('stripe'), dataIndex % 2 === 1)"
+        >
+          <td v-for="prop in columnProps">
+            {{ dataItem[prop] }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -25,6 +27,7 @@ import type { TableColumnProps } from './table-column'
 import { computed, useSlots } from 'vue'
 import { VNode } from 'vue'
 import { VNodeProps } from 'vue'
+import { CSSProperties } from 'vue'
 
 const ns = useNamespace('table')
 const props = defineProps(tableProps)
@@ -43,7 +46,20 @@ const columnProps = computed(() => {
   return res
 })
 
-console.log(columnProps.value)
+const containerStyle = computed(() => {
+  const res: CSSProperties = {}
+
+  const { height } = props
+  if (height) {
+    if (typeof height === 'number') {
+      res.height = `${height}px`
+    } else {
+      res.height = height
+    }
+  }
+
+  return res
+})
 </script>
 
 <style scoped lang="less">
