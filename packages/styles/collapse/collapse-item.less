@@ -1,0 +1,36 @@
+@import "../mixins.less";
+
+@collapse-item: .useComponent(collapse-item)[@return];
+
+.collapse-item-mixin() {
+
+  @border-color: .useRootCssVar(color-border-dark)[@return];
+  @margin-size: 16px;
+  
+  border-bottom: 1px solid @border-color;
+
+  .@{collapse-item}-header {
+    display: flex;
+    justify-content: space-between;
+    margin: @margin-size 0;
+    cursor: pointer;
+  }
+
+  .@{collapse-item}-content {
+    // will-change: height;
+    margin-bottom: @margin-size;
+  }
+}
+
+.set-component(collapse-item, .collapse-item-mixin());
+
+// .@{collapse-item}-transition-enter-active,
+// .@{collapse-item}-transition-leave-active {
+//   transition: height .25s;
+// }
+
+// .@{collapse-item}-transition-enter-from,
+// .@{collapse-item}-transition-leave-to {
+//   max-height: 0;
+//   overflow: hidden;
+// }

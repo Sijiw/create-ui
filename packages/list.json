@@ -82,5 +82,11 @@
     "compZhName": "卡片",
     "compDesc": "卡片组件",
     "compClassName": "card"
+  },
+  {
+    "compName": "Collapse",
+    "compZhName": "折叠面板",
+    "compDesc": "折叠面板组件",
+    "compClassName": "collapse"
   }
 ]

@@ -4,6 +4,7 @@ import CButton from '@create-ui/components/Button'
 import CCard from '@create-ui/components/Card'
 import CCheckbox from '@create-ui/components/Checkbox'
 import CCheckboxGroup from '@create-ui/components/CheckboxGroup'
+import CCollapse from '@create-ui/components/Collapse'
 import CContainer from '@create-ui/components/Container'
 import CDatePicker from '@create-ui/components/DatePicker'
 import CFoo from '@create-ui/components/Foo'
@@ -22,6 +23,7 @@ export default [
   CCard,
   CCheckbox,
   CCheckboxGroup,
+  CCollapse,
   CContainer,
   CDatePicker,
   CFoo,
