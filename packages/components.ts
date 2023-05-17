@@ -13,6 +13,7 @@ import CGrid from '@create-ui/components/Grid'
 import CIcon from '@create-ui/components/Icon'
 import CImage from '@create-ui/components/Image'
 import CInput from '@create-ui/components/Input'
+import CLink from '@create-ui/components/Link'
 import CProgress from '@create-ui/components/Progress'
 import CRadio from '@create-ui/components/Radio'
 import CSwitch from '@create-ui/components/Switch'
@@ -33,6 +34,7 @@ export default [
   CIcon,
   CImage,
   CInput,
+  CLink,
   CProgress,
   CRadio,
   CSwitch,
