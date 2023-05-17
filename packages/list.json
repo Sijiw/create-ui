@@ -94,5 +94,11 @@
     "compZhName": "表格",
     "compDesc": "表格组件",
     "compClassName": "table"
+  },
+  {
+    "compName": "Link",
+    "compZhName": "链接",
+    "compDesc": "链接组件",
+    "compClassName": "link"
   }
 ]
