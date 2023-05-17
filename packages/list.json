@@ -88,5 +88,11 @@
     "compZhName": "折叠面板",
     "compDesc": "折叠面板组件",
     "compClassName": "collapse"
+  },
+  {
+    "compName": "Table",
+    "compZhName": "表格",
+    "compDesc": "表格组件",
+    "compClassName": "table"
   }
 ]

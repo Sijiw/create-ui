@@ -16,6 +16,7 @@ import CInput from '@create-ui/components/Input'
 import CProgress from '@create-ui/components/Progress'
 import CRadio from '@create-ui/components/Radio'
 import CSwitch from '@create-ui/components/Switch'
+import CTable from '@create-ui/components/Table'
 
 export default [
   CAvatar,
@@ -34,5 +35,6 @@ export default [
   CInput,
   CProgress,
   CRadio,
-  CSwitch
+  CSwitch,
+  CTable
 ] as Plugin[]

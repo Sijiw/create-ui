@@ -1,0 +1,13 @@
+@import "../mixins.less";
+
+@table-column: .useComponent(table-column)[@return];
+
+.table-column-mixin() {
+  --text-color: .useRootCssVar(color-secondary-text)[@return];
+
+  border: none;
+  padding: 8px 12px;
+  color: var(--text-color)
+}
+
+.set-component(table-column, .table-column-mixin());
