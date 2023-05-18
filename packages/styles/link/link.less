@@ -1,0 +1,53 @@
+@import "../mixins.less";
+
+@link: .useComponent(link)[@return];
+@status: primary, success, info, warning, danger;
+@statusLen: length(@status);
+
+.set-colors(@index) when(@index <= @statusLen) {
+  @currentStatus: extract(@status, @index);
+
+  .@{link}--@{currentStatus} {
+    color: .useRootCssVar(~'color-@{currentStatus}')[@return];
+    &:hover {
+      color: .useRootCssVar(~'color-@{currentStatus}-light-5')[@return];
+    }
+
+    &.disabled{ 
+      .disabled();
+      --link-color: .useRootCssVar(~'color-@{currentStatus}-light-7')[@return];
+      color: var(--link-color);
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
+
+  .set-colors(@index + 1);
+}
+
+.link-mixin() {
+  --link-color: .useRootCssVar(color-primary-text)[@return];
+  --link-disabled-color: .useRootCssVar(color-disabled-text)[@return];
+
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--link-color);
+
+  transition: all .3s;
+
+  &:hover {
+    color: .useRootCssVar(color-primary-light-3)[@return];
+  }
+
+  &.disabled {
+    .disabled();
+    color: var(--link-disabled-color);
+    &:hover {
+      color: var(--link-disabled-color);
+    }
+  }
+}
+
+.set-component(link, .link-mixin());
+.set-colors(1);
