@@ -100,5 +100,11 @@
     "compZhName": "链接",
     "compDesc": "链接组件",
     "compClassName": "link"
+  },
+  {
+    "compName": "Breadcrumb",
+    "compZhName": "面包屑",
+    "compDesc": "面包屑组件",
+    "compClassName": "breadcrumb"
   }
 ]
