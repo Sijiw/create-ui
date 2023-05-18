@@ -31,12 +31,13 @@
 
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
-import { computed, ref, watch } from 'vue'
+import { computed, inject, ref, watch } from 'vue'
 import { inputProps } from './input'
+import { formItemInjectionKey } from '@create-ui/components/Form/src/form-item'
 
 const ns = useNamespace('input')
 const props = defineProps(inputProps)
-const emits = defineEmits(['update:modelValue', 'clear'])
+const emits = defineEmits(['update:modelValue', 'clear', 'blur', 'validate'])
 
 const clearVisible = computed(
   () => props.modelValue !== undefined && props.modelValue.length !== 0
@@ -52,13 +53,16 @@ const inputClasses = [ns.addBlock('inner')]
 const clearableClasses = [ns.addBlock('clearable')]
 const prefixClasses = [ns.addBlock('prefix')]
 const suffixClasses = [ns.addBlock('suffix')]
+const rules = inject(formItemInjectionKey, undefined)
 
 const handleFocus = () => {
   isFocus.value = true
 }
 
-const handleBlur = () => {
+const handleBlur = (e: FocusEvent) => {
   isFocus.value = false
+  emits('blur', e)
+  emits('validate', e)
 }
 
 const handleClear = () => {

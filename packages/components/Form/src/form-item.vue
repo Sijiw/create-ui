@@ -1,5 +1,5 @@
 <template>
-  <div :class="formItemClasses">
+  <div :class="formItemClasses" @validate.capture="handleBlur($event)">
     <label for="" :class="ns.addBlock('label')">
       <span :class="ns.addBM('label', 'required')" v-if="required">*</span>
       {{ label }}
@@ -10,11 +10,31 @@
 
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
-import { formItemProps } from './form-item'
+import { formItemProps, formItemInjectionKey } from './form-item'
+import { formInjectionKey } from './form'
 import { computed } from 'vue'
+import { inject } from 'vue'
+import { provide } from 'vue'
 
 const ns = useNamespace('form-item')
 const props = defineProps(formItemProps)
+const formProvides = inject(formInjectionKey, undefined)
+const errors = formProvides?.formState.errors
+const formItemDescriptor = formProvides?.rules?.[props.prop]
+
+const isError = computed(() => {
+  if (!errors) return false
+  if (props.prop in errors) {
+    return true
+  }
+})
+
+const errorMessage = computed(() => {
+  if (isError.value === false || !errors) return undefined
+  if (props.prop in errors) {
+    return errors[props.prop][0].message
+  }
+})
 
 const formItemClasses = computed(() => {
   const res = [ns.baseName]
@@ -25,6 +45,12 @@ const formItemClasses = computed(() => {
 
   return res
 })
+
+const handleBlur = (e: FocusEvent) => {
+  console.log('input blur')
+}
+
+provide(formItemInjectionKey, formItemDescriptor)
 </script>
 
 <style scoped lang="less">
