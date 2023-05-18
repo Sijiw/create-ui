@@ -1,0 +1,18 @@
+@import "../mixins.less";
+
+@breadcrumb: .useComponent(breadcrumb)[@return];
+
+.breadcrumb-mixin() {
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
+  li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 12px;
+    content: '/';
+  }
+}
+
+.set-component(breadcrumb, .breadcrumb-mixin());
