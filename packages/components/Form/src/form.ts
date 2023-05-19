@@ -7,7 +7,7 @@ export type FormRules = Rules
 export type FormProps = ExtractPropTypes<typeof formProps>
 export const formProps = {
   model: {
-    type: Array as PropType<object[]>,
+    type: Array as PropType<Record<string, any>[]>,
     required: true
   },
   rules: {
