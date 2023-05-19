@@ -9,6 +9,9 @@ export const FormPlugin: Plugin = {
   }
 }
 
+export * from './src/form'
+export * from './src/form-item'
+
 export default FormPlugin
 
 export { Form, FormItem }

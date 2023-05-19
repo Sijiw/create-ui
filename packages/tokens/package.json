@@ -1,0 +1,13 @@
+{
+  "name": "@create-ui/tokens",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.41"
+  },
+  "sideEffects": false,
+  "author": "Sijiw",
+  "license": "MIT"
+}

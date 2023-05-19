@@ -8,6 +8,7 @@ importers:
       '@babel/eslint-parser': ^7.19.1
       '@create-ui/components': workspace:^0.0.0
       '@create-ui/hooks': workspace:^0.0.0
+      '@create-ui/tokens': workspace:^0.0.0
       '@iconify/vue': ^4.1.0
       '@types/less': ^3.0.3
       '@types/node': ^18.11.18
@@ -43,6 +44,7 @@ importers:
     dependencies:
       '@create-ui/components': link:packages/components
       '@create-ui/hooks': link:packages/hooks
+      '@create-ui/tokens': link:packages/tokens
       '@vue/shared': 3.2.47
       '@vueuse/core': 9.13.0_vue@3.2.47
       async-validator: 4.2.5
