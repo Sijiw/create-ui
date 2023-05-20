@@ -1,43 +1,68 @@
 <template>
-  <div :class="formItemClasses" @validate.capture="handleBlur($event)">
+  <div
+    ref="formItemRef"
+    :class="formItemClasses"
+    @validate.capture="handleBlur($event)"
+  >
     <label for="" :class="ns.addBlock('label')">
       <span :class="ns.addBM('label', 'required')" v-if="required">*</span>
       {{ label }}
     </label>
-    <slot />
+    <div :class="[ns.addBlock('slot'), ns.getClass('block', true)]">
+      <slot />
+      <span :class="errorMessageClasses">{{ errorMessage }}</span>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
-import { formItemProps, formItemInjectionKey } from './form-item'
-import { formInjectionKey } from './form'
-import { computed } from 'vue'
-import { inject } from 'vue'
-import { provide } from 'vue'
+import { formItemInjectionKey, formInjectionKey } from '@create-ui/tokens'
+import { formItemProps } from './form-item'
+import { computed, inject, provide, reactive, ref } from 'vue'
+import AsyncValidator, {
+  RuleItem,
+  Rules,
+  ValidateError,
+  ValidateFieldsError
+} from 'async-validator'
+import { toRefs } from 'vue'
+import { FormItemInstance } from '..'
+import { nextTick } from 'vue'
 
 const ns = useNamespace('form-item')
 const props = defineProps(formItemProps)
+const formItemRef = ref<FormItemInstance>()
 const formProvides = inject(formInjectionKey, undefined)
-const errors = formProvides?.formState.errors
-const formItemDescriptor = formProvides?.rules?.[props.prop]
+// const errors = formProvides?.formState.errors
+const formItemDescriptor = computed(() => {
+  if (!props.prop || !formProvides?.rules[props.prop]) return {} as Rules
+  return { [props.prop]: formProvides.rules[props.prop] }
+})
+
+const formItemValidator = computed(() => {
+  if (!formItemDescriptor.value) return new AsyncValidator({})
+  return new AsyncValidator(formItemDescriptor.value)
+})
 
 const isError = computed(() => {
-  if (!errors) return false
-  if (props.prop in errors) {
-    return true
-  }
+  return errorMessage.value !== ''
 })
 
 const errorMessage = computed(() => {
-  if (isError.value === false || !errors) return undefined
-  if (props.prop in errors) {
-    return errors[props.prop][0].message
+  const errors = formProvides?.formState.errors
+  if (!errors || !props.prop) return ''
+
+  if (props.prop in errors && errors[props.prop].length) {
+    const messageItem = errors[props.prop][0] as ValidateError
+    return messageItem.message
   }
+
+  return ''
 })
 
 const formItemClasses = computed(() => {
-  const res = [ns.baseName]
+  const res = [ns.baseName, ns.getClass(ns.addModifier('error'), isError.value)]
 
   if (props.labelPosition) {
     res.push(ns.getClass(props.labelPosition, true))
@@ -46,11 +71,64 @@ const formItemClasses = computed(() => {
   return res
 })
 
+const errorMessageClasses = computed(() => {
+  return [
+    ns.addElement('error-message'),
+    ns.getClass('show-message', isError.value)
+  ]
+})
+
+const formItemValidate = () => {
+  if (
+    !props.prop ||
+    !formProvides?.rules[props.prop] ||
+    Object.is(formItemDescriptor, {})
+  )
+    return
+
+  console.log(formProvides.model[props.prop], formItemValidator.value)
+
+  return formItemValidator.value
+    ?.validate({ [props.prop]: formProvides.model[props.prop] })
+    .then(() => {
+      if (props.prop) {
+        formProvides.changeError(props.prop, {})
+      }
+      return {
+        message: 'success'
+      }
+    })
+    .catch(({ errors, fields }) => {
+      console.log(errors)
+      if (props.prop) {
+        formProvides.changeError(props.prop, errors)
+      }
+      return Promise.reject({
+        message: 'failed',
+        errors,
+        fields
+      })
+    })
+}
+
 const handleBlur = (e: FocusEvent) => {
   console.log('input blur')
 }
 
-provide(formItemInjectionKey, formItemDescriptor)
+provide(
+  formItemInjectionKey,
+  reactive({
+    ...toRefs(props),
+    formItemRules: formItemDescriptor.value,
+    formItemRef,
+    validate: formItemValidate,
+    isError: isError.value
+  })
+)
+
+defineExpose({
+  formItemValidate
+})
 </script>
 
 <style scoped lang="less">

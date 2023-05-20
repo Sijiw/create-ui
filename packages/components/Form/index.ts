@@ -14,4 +14,7 @@ export * from './src/form-item'
 
 export default FormPlugin
 
+export type FormInstance = InstanceType<typeof Form>
+export type FormItemInstance = InstanceType<typeof FormItem>
+
 export { Form, FormItem }

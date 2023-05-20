@@ -1,26 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ExtractPropTypes, InjectionKey, PropType } from 'vue'
-import type { Rules, ValidateFieldsError } from 'async-validator'
+import type { Rules } from 'async-validator'
 
 export type FormRules = Rules
 
 export type FormProps = ExtractPropTypes<typeof formProps>
 export const formProps = {
   model: {
-    type: Array as PropType<Record<string, any>[]>,
+    type: Object as PropType<Record<string, any>>,
     required: true
   },
   rules: {
-    type: Object as PropType<FormRules>
+    type: Object as PropType<FormRules>,
+    required: true
   }
 } as const
-
-export type FormState = {
-  errors: ValidateFieldsError | []
-}
-
-export type FormInjectionKey = FormProps & {
-  formState: FormState
-}
-export const formInjectionKey: InjectionKey<FormInjectionKey> =
-  Symbol('formInjectionKey')

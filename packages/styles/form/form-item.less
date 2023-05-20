@@ -4,15 +4,35 @@
 
 .form-item-mixin() {
   display: flex;
-  height: 32px;
-  align-items: center;
-  margin: 12px 0;
+  // height: 32px;
+  // align-items: center;
+  margin: 8px 0;
 
   .@{form-item}-label {
     display: inline-flex;
     justify-content: start;
     width: 88px;
     margin-right: 12px;
+  }
+
+  .@{form-item}-slot{ 
+    &.block {
+      flex: 1;
+    }
+
+    .@{form-item}__error-message {
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0;
+      color: .useRootCssVar(color-danger)[@return];
+
+      transition: all .25s;
+
+      &.show-message {
+        opacity: 1;
+      }
+    }
   }
 
   .@{form-item}-label--required {
