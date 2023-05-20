@@ -1,11 +1,11 @@
 <template>
-  <div :class="classes">
+  <div :class="inputClasses">
     <div :class="prefixClasses">
       <c-icon :icon="prefixIcon" v-if="prefixIcon && !$slots.prefixIcon" />
       <slot name="prefixIcon" />
     </div>
     <input
-      :class="inputClasses"
+      :class="inputInnerClasses"
       :placeholder="placeholder"
       :value="modelValue"
       :type="inputType"
@@ -14,6 +14,7 @@
       @input="handleInput"
       @focus="handleFocus"
       @blur="handleBlur"
+      @change="handleChange"
     />
     <div
       :class="clearableClasses"
@@ -33,27 +34,53 @@
 import { useNamespace } from '@create-ui/hooks'
 import { computed, inject, ref, watch } from 'vue'
 import { inputProps } from './input'
-import { formItemInjectionKey } from '@create-ui/components/Form/src/form-item'
+import { formItemInjectionKey } from '@create-ui/tokens'
 
 const ns = useNamespace('input')
 const props = defineProps(inputProps)
-const emits = defineEmits(['update:modelValue', 'clear', 'blur', 'validate'])
+const emits = defineEmits(['update:modelValue', 'clear', 'blur', 'change'])
+const formItemProvide = inject(formItemInjectionKey, undefined)
+const trigger = formItemProvide?.trigger
+
+const inputError = ref(false)
+const isError = computed(() => {
+  let res = false
+  if (inputError.value) res = true
+  if (formItemProvide?.isError) res = true
+
+  return res
+})
+// console.log(formItemRef.value)
 
 const clearVisible = computed(
   () => props.modelValue !== undefined && props.modelValue.length !== 0
 )
 const isFocus = ref(false)
-const classes = computed(() => {
-  const res = [ns.baseName, ns.getClass('disabled', props.disabled)]
+const inputClasses = computed(() => {
+  const res = [
+    ns.baseName,
+    ns.getClass('disabled', props.disabled),
+    ns.getClass(ns.addModifier('error'), isError.value)
+  ]
   if (isFocus.value) res.push(ns.getClass('focus', isFocus.value))
 
   return res
 })
-const inputClasses = [ns.addBlock('inner')]
+const inputInnerClasses = [ns.addBlock('inner')]
 const clearableClasses = [ns.addBlock('clearable')]
 const prefixClasses = [ns.addBlock('prefix')]
 const suffixClasses = [ns.addBlock('suffix')]
-const rules = inject(formItemInjectionKey, undefined)
+
+const inputValidate = () => {
+  formItemProvide
+    ?.validate()
+    ?.then(() => {
+      inputError.value = false
+    })
+    ?.catch(() => {
+      inputError.value = true
+    })
+}
 
 const handleFocus = () => {
   isFocus.value = true
@@ -62,7 +89,6 @@ const handleFocus = () => {
 const handleBlur = (e: FocusEvent) => {
   isFocus.value = false
   emits('blur', e)
-  emits('validate', e)
 }
 
 const handleClear = () => {
@@ -71,6 +97,18 @@ const handleClear = () => {
 
 const handleInput = (e: Event) => {
   emits('update:modelValue', (e.target as HTMLInputElement).value)
+
+  if (trigger === 'input') {
+    inputValidate()
+  }
+}
+
+const handleChange = () => {
+  emits('change')
+
+  if (trigger === 'change') {
+    inputValidate()
+  }
 }
 </script>
 

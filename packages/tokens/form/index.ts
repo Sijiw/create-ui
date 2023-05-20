@@ -1,20 +1,33 @@
 import type {
   FormProps,
   FormItemProps,
-  FormState
+  FormItemInstance
 } from '@create-ui/components/Form'
 import type { Rules } from 'async-validator/dist-types/interface'
-import { InjectionKey } from 'vue'
+import type { ValidateFieldsError } from 'async-validator/dist-types/interface'
+import { ComputedRef, InjectionKey } from 'vue'
 
-export type FormRules = Rules & {
-  trigger?: 'blur' | 'change'
-}
+export type FormRules = Rules
 
 export type FormContext = FormProps & {
   formState: FormState
+  changeError: (props: string, error: ValidateFieldsError) => void
 }
 
-export type FormItemContext = FormItemProps
+export type FormItemContext = FormItemProps & {
+  formItemRules: FormRules
+  formItemRef: FormItemInstance
+  validate: () =>
+    | Promise<{
+        message: string
+      }>
+    | undefined
+  isError: boolean
+}
+
+export type FormState = {
+  errors: Record<string, ValidateFieldsError>
+}
 
 export const formInjectionKey: InjectionKey<FormContext> =
   Symbol('formInjectionKey')

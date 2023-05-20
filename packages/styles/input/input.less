@@ -4,20 +4,28 @@
 .input-mixin() {
   display: flex;
   align-items: center;
+  @shadow-color: #d1d5db;
 
   width: 100%;
   height: 32px;
-  border: 1px solid #d1d5db;
+  border: 1px solid @shadow-color;
   padding: 1px 0;
   border-radius: 4px;
   transition: all 0.3s;
 
   &:hover {
-    box-shadow: 0 0 0 1px #c0c4cc inset;
+    @shadow-color: #d1d5db;
+    box-shadow: 0 0 0 1px @shadow-color inset;
   }
 
   &.focus {
-    box-shadow: 0 0 0 1px #409eef inset;
+    @shadow-color: .useRootCssVar(color-primary)[@return];
+    box-shadow: 0 0 0 1px @shadow-color inset;
+  }
+
+  &.@{input}--error {
+    @shadow-color: .useRootCssVar(color-danger)[@return];
+    box-shadow: 0 0 0 1px @shadow-color inset;
   }
 
   &.disabled {

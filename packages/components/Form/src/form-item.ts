@@ -1,14 +1,12 @@
-import { ExtractPropTypes, InjectionKey } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 
 export type FormItemProps = ExtractPropTypes<typeof formItemProps>
 export const formItemProps = {
   label: {
-    type: String,
-    required: true
+    type: String
   },
   prop: {
-    type: String,
-    required: true
+    type: String
   },
   required: {
     type: Boolean
@@ -17,9 +15,9 @@ export const formItemProps = {
     type: String,
     values: ['start', 'end', 'top'],
     default: 'start'
+  },
+  trigger: {
+    type: String,
+    values: ['change', 'input']
   }
 } as const
-
-export const formItemInjectionKey: InjectionKey<FormItemProps> = Symbol(
-  'formItemInjectionKey'
-)
