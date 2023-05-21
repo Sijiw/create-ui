@@ -1,4 +1,4 @@
-import type { ExtractPropTypes } from 'vue'
+import type { ExtractPropTypes, PropType } from 'vue'
 
 export type FormItemProps = ExtractPropTypes<typeof formItemProps>
 export const formItemProps = {
@@ -17,7 +17,7 @@ export const formItemProps = {
     default: 'start'
   },
   trigger: {
-    type: String,
-    values: ['change', 'input']
+    type: Array as PropType<Array<'change' | 'input' | 'blur'>>
+    // values: ['change', 'input']
   }
 } as const

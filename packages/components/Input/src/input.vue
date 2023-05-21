@@ -34,18 +34,23 @@
 import { useNamespace } from '@create-ui/hooks'
 import { computed, inject, ref, watch } from 'vue'
 import { inputProps } from './input'
-import { formItemInjectionKey } from '@create-ui/tokens'
+import { formItemInjectionKey, formInjectionKey } from '@create-ui/tokens'
+import { nextTick } from 'vue'
 
 const ns = useNamespace('input')
 const props = defineProps(inputProps)
 const emits = defineEmits(['update:modelValue', 'clear', 'blur', 'change'])
 const formItemProvide = inject(formItemInjectionKey, undefined)
+const formProvide = inject(formInjectionKey, undefined)
 const trigger = formItemProvide?.trigger
 
 const inputError = ref(false)
 const isError = computed(() => {
   let res = false
-  if (inputError.value) res = true
+  // if (inputError.value) res = true
+  // console.log(formItemProvide?.isError)
+
+  // console.log(res)
   if (formItemProvide?.isError) res = true
 
   return res
@@ -71,13 +76,27 @@ const clearableClasses = [ns.addBlock('clearable')]
 const prefixClasses = [ns.addBlock('prefix')]
 const suffixClasses = [ns.addBlock('suffix')]
 
+// const inputValidate = () => {
+//   formItemProvide
+//     ?.validate()
+//     ?.then(() => {
+//       inputError.value = false
+//     })
+//     ?.catch(() => {
+//       inputError.value = true
+//     })
+// }
+
 const inputValidate = () => {
-  formItemProvide
-    ?.validate()
+  if (!formItemProvide?.prop) return
+  const { prop } = formItemProvide
+
+  formProvide
+    ?.validateField(prop)
     ?.then(() => {
       inputError.value = false
     })
-    ?.catch(() => {
+    .catch(() => {
       inputError.value = true
     })
 }
@@ -89,6 +108,12 @@ const handleFocus = () => {
 const handleBlur = (e: FocusEvent) => {
   isFocus.value = false
   emits('blur', e)
+
+  if (!trigger) return
+
+  if (trigger.includes('blur')) {
+    inputValidate()
+  }
 }
 
 const handleClear = () => {
@@ -98,7 +123,9 @@ const handleClear = () => {
 const handleInput = (e: Event) => {
   emits('update:modelValue', (e.target as HTMLInputElement).value)
 
-  if (trigger === 'input') {
+  if (!trigger) return
+
+  if (trigger.includes('input')) {
     inputValidate()
   }
 }
@@ -106,7 +133,9 @@ const handleInput = (e: Event) => {
 const handleChange = () => {
   emits('change')
 
-  if (trigger === 'change') {
+  if (!trigger) return
+
+  if (trigger.includes('change')) {
     inputValidate()
   }
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ExtractPropTypes, InjectionKey, PropType } from 'vue'
+import { ExtractPropTypes, PropType } from 'vue'
 import type { Rules } from 'async-validator'
 
 export type FormRules = Rules

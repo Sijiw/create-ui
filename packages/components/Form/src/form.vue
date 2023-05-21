@@ -22,17 +22,53 @@ const formState: FormState = reactive({
 const formValidator = new AsyncValidator(props.rules)
 
 const validate = () => {
-  if (!props.rules || !formValidator) return
+  // if (!props.rules || !formValidator) return
 
   return formValidator
     .validate(props.model)
     .then(() => {
+      console.log('success')
+
+      formState.errors = {}
       return {
         message: 'success'
       }
     })
     .catch(({ errors, fields }) => {
+      console.log('failed')
+
       formState.errors = fields
+      return Promise.reject({
+        message: 'failed',
+        errors,
+        fields
+      })
+    })
+}
+
+const validateField = (field: string) => {
+  const rule = props.rules[field]
+  const model = props.model[field]
+  // const temp = { [field]: model }
+  // console.log('model: ', temp)
+
+  if (!rule || !model) return
+
+  const fieldValidator = new AsyncValidator({ [field]: rule })
+
+  return fieldValidator
+    .validate({ [field]: model })
+    .then(() => {
+      formState.errors[field] = {}
+      return {
+        message: 'success'
+      }
+    })
+    .catch(({ errors, fields }) => {
+      formState.errors[field] = fields[field]
+      // console.log(fields)
+      // console.log(formState.errors[field])
+
       return Promise.reject({
         message: 'failed',
         errors,
@@ -57,12 +93,15 @@ provide(
   reactive({
     ...toRefs(props),
     formState,
-    changeError
+    changeError,
+    validate,
+    validateField
   })
 )
 
 defineExpose({
-  validate
+  validate,
+  validateField
 })
 </script>
 

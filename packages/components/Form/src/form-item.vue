@@ -1,9 +1,5 @@
 <template>
-  <div
-    ref="formItemRef"
-    :class="formItemClasses"
-    @validate.capture="handleBlur($event)"
-  >
+  <div ref="formItemRef" :class="formItemClasses">
     <label for="" :class="ns.addBlock('label')">
       <span :class="ns.addBM('label', 'required')" v-if="required">*</span>
       {{ label }}
@@ -51,10 +47,12 @@ const isError = computed(() => {
 
 const errorMessage = computed(() => {
   const errors = formProvides?.formState.errors
+
   if (!errors || !props.prop) return ''
 
   if (props.prop in errors && errors[props.prop].length) {
     const messageItem = errors[props.prop][0] as ValidateError
+
     return messageItem.message
   }
 
@@ -111,10 +109,6 @@ const formItemValidate = () => {
     })
 }
 
-const handleBlur = (e: FocusEvent) => {
-  console.log('input blur')
-}
-
 provide(
   formItemInjectionKey,
   reactive({
@@ -122,7 +116,7 @@ provide(
     formItemRules: formItemDescriptor.value,
     formItemRef,
     validate: formItemValidate,
-    isError: isError.value
+    isError
   })
 )
 

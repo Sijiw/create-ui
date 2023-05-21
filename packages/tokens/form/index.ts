@@ -12,6 +12,16 @@ export type FormRules = Rules
 export type FormContext = FormProps & {
   formState: FormState
   changeError: (props: string, error: ValidateFieldsError) => void
+  validate: () =>
+    | Promise<{
+        message: string
+      }>
+    | undefined
+  validateField: (field: string) =>
+    | Promise<{
+        message: string
+      }>
+    | undefined
 }
 
 export type FormItemContext = FormItemProps & {
