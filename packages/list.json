@@ -106,5 +106,11 @@
     "compZhName": "面包屑",
     "compDesc": "面包屑组件",
     "compClassName": "breadcrumb"
+  },
+  {
+    "compName": "Menu",
+    "compZhName": "菜单",
+    "compDesc": "菜单组件",
+    "compClassName": "menu"
   }
 ]

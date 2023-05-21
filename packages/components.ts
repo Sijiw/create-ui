@@ -15,6 +15,7 @@ import CIcon from '@create-ui/components/Icon'
 import CImage from '@create-ui/components/Image'
 import CInput from '@create-ui/components/Input'
 import CLink from '@create-ui/components/Link'
+import CMenu from '@create-ui/components/Menu'
 import CProgress from '@create-ui/components/Progress'
 import CRadio from '@create-ui/components/Radio'
 import CSwitch from '@create-ui/components/Switch'
@@ -37,6 +38,7 @@ export default [
   CImage,
   CInput,
   CLink,
+  CMenu,
   CProgress,
   CRadio,
   CSwitch,
