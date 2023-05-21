@@ -5,9 +5,17 @@
 .table-column-mixin() {
   --text-color: .useRootCssVar(color-secondary-text)[@return];
 
+  // display: inline-flex;
   border: none;
   padding: 8px 12px;
-  color: var(--text-color)
+  font-size: 14px;
+  color: var(--text-color);
+
+  .@{table-column}-sort {
+    display: inline-flex;
+    flex-direction: column;
+    // height: 14px;
+  }
 }
 
 .set-component(table-column, .table-column-mixin());
