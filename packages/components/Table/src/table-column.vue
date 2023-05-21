@@ -1,5 +1,13 @@
 <template>
-  <th :class="ns.baseName" :width="width" :height="height">{{ label }}</th>
+  <th :class="ns.baseName" :width="width" :height="height">
+    <div>
+      {{ label }}
+      <!-- <span :class="ns.addBlock('sort')">
+        <div>a</div>
+        <div>b</div>
+      </span> -->
+    </div>
+  </th>
 </template>
 
 <script lang="ts" setup>
