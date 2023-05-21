@@ -8,5 +8,8 @@ export const collapseItemProps = {
   },
   icon: {
     type: String
+  },
+  name: {
+    type: String
   }
 } as const

@@ -1,6 +1,7 @@
 @import "../mixins.less";
 
 @collapse-item: .useComponent(collapse-item)[@return];
+@icon: .useComponent(icon)[@return];
 
 .collapse-item-mixin() {
 
@@ -8,6 +9,18 @@
   @margin-size: 16px;
   
   border-bottom: 1px solid @border-color;
+
+  &.@{collapse-item}--show-content {
+    
+    .@{collapse-item}-content {
+      grid-template-rows: 1fr;
+      margin-bottom: @margin-size;
+    }
+
+    .@{icon} {
+      transform: rotate(90deg);
+    }
+  }
 
   .@{collapse-item}-header {
     display: flex;
@@ -18,19 +31,15 @@
 
   .@{collapse-item}-content {
     // will-change: height;
-    margin-bottom: @margin-size;
+    display: grid;
+    grid-template-rows: 0fr;
+    font-size: 14px;
+    transition: all .25s;
+    
+    & > div {
+      overflow: hidden;
+     }
   }
 }
 
 .set-component(collapse-item, .collapse-item-mixin());
-
-// .@{collapse-item}-transition-enter-active,
-// .@{collapse-item}-transition-leave-active {
-//   transition: height .25s;
-// }
-
-// .@{collapse-item}-transition-enter-from,
-// .@{collapse-item}-transition-leave-to {
-//   max-height: 0;
-//   overflow: hidden;
-// }

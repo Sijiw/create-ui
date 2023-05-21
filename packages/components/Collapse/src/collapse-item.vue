@@ -1,5 +1,10 @@
 <template>
-  <div :class="ns.baseName">
+  <div
+    :class="[
+      ns.baseName,
+      ns.getClass(ns.addModifier('show-content'), shouldOpen)
+    ]"
+  >
     <div :class="ns.addBlock('header')" @click="handleClick">
       <div>
         <span :class="ns.addBE('header', 'title')">{{ title }}</span>
@@ -8,54 +13,52 @@
         </span>
       </div>
       <div :class="ns.addBE('header', 'arrow')">
-        <Icon icon="ic:round-keyboard-arrow-right"></Icon>
+        <c-icon>
+          <Icon icon="ic:round-keyboard-arrow-right"></Icon>
+        </c-icon>
       </div>
     </div>
-    <Transition :name="ns.addBlock('transition')">
-      <div :class="ns.addBlock('content')" v-show="visible">
+    <div :class="[ns.addBlock('content')]">
+      <div>
         <slot />
       </div>
-    </Transition>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
 import { collapseItemProps } from './collapse-item'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import CIcon from '@create-ui/components/Icon/src/icon.vue'
+import { inject } from 'vue'
+import { collapseInjectionKey } from 'packages/tokens'
+import { nextTick } from 'vue'
 
 const ns = useNamespace('collapse-item')
 const props = defineProps(collapseItemProps)
+const collapseProvide = inject(collapseInjectionKey, undefined)
 
 const visible = ref(false)
+const shouldOpen = computed(() => {
+  if (props.name && collapseProvide?.activeKey) {
+    console.log('active key:', collapseProvide.activeKey)
+    console.log('name:', props.name)
+    // nextTick()
+    return props.name === collapseProvide.activeKey
+  } else {
+    return visible.value
+  }
+})
 
 const handleClick = () => {
-  // visible.value = !visible.value
-  if (visible.value) {
-    visible.value = false
-  } else {
-    visible.value = true
+  if (collapseProvide?.accordion && props.name) {
+    collapseProvide.changeActiveKey(props.name)
   }
+  visible.value = !visible.value
 }
 </script>
 
 <style scoped lang="less">
 @import 'packages/styles/collapse/collapse-item.less';
-
-.c-collapse-item-transition-enter-active,
-.c-collapse-item-transition-leave-active {
-  transition: all 0.5s;
-}
-
-.c-collapse-item-transition-enter-from,
-.c-collapse-item-transition-leave-to {
-  max-height: 0;
-  overflow: hidden;
-}
-
-.c-collapse-item-transition-enter-to,
-.c-collapse-item-transition-leave-from {
-  max-height: 500px;
-  overflow: hidden;
-}
 </style>
