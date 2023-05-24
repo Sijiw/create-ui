@@ -1,0 +1,18 @@
+@import "../mixins.less";
+
+@menu-item: .useComponent(menu-item)[@return];
+
+.menu-item-mixin() {
+  display: flex;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 8px;
+
+  transition: all .25s;
+  
+  &:hover {
+    background-color: .useRootCssVar(color-primary-light-9)[@return];
+  }
+}
+
+.set-component(menu-item, .menu-item-mixin());
