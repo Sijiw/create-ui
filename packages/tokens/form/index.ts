@@ -26,7 +26,7 @@ export type FormContext = FormProps & {
 
 export type FormItemContext = FormItemProps & {
   formItemRules: FormRules
-  formItemRef: FormItemInstance
+  // formItemRef: FormItemInstance
   validate: () =>
     | Promise<{
         message: string

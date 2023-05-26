@@ -3,10 +3,7 @@ import CreateUI from '../../../dist/create-ui.es'
 import '../../../dist/style.css'
 import '../styles/common.css'
 
-import {
-  AntDesignContainer,
-  ElementPlusContainer
-} from '@vitepress-demo-preview/component'
+import { ElementPlusContainer } from '@vitepress-demo-preview/component'
 import '@vitepress-demo-preview/component/dist/style.css'
 
 export default {

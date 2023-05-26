@@ -113,10 +113,10 @@ provide(
   formItemInjectionKey,
   reactive({
     ...toRefs(props),
-    formItemRules: formItemDescriptor.value,
-    formItemRef,
+    formItemRules: formItemDescriptor,
+    // formItemRef,
     validate: formItemValidate,
-    isError
+    isError: isError
   })
 )
 
