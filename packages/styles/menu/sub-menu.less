@@ -1,7 +1,40 @@
 @import "../mixins.less";
 
 @sub-menu: .useComponent(sub-menu)[@return];
+@icon: .useComponent(icon)[@return];
 
-.sub-menu-mixin() {}
+.sub-menu-mixin() {
+  cursor: pointer;  
+  
+  .@{sub-menu}-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 8px;
+    &:hover {
+      @hover-bg-color: .useRootCssVar(color-primary-light-9)[@return];
+      background-color: @hover-bg-color;
+    }
+
+    .@{sub-menu}__text {
+      flex: 1;
+    }
+
+    &.open {
+      .@{icon} {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  
+  .@{sub-menu}-items {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: all .3s;
+    &.open {
+      grid-template-rows: 1fr;
+    }
+  }
+}
 
 .set-component(sub-menu, .sub-menu-mixin());

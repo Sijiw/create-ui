@@ -7,11 +7,28 @@
   cursor: pointer;
   font-size: 14px;
   padding: 12px 8px;
-
+  overflow: hidden;
   transition: all .25s;
+  @bg-color: .useRootCssVar(color-primary-light-9)[@return];
+  @text-color: .useRootCssVar(color-primary)[@return];
+
+  &.hidden {
+    grid-template-rows: 1fr;
+    padding: 0;
+  }
+
+  &.active {
+    color: @text-color;
+    background-color: @bg-color;
+  }
   
   &:hover {
-    background-color: .useRootCssVar(color-primary-light-9)[@return];
+    background-color: @bg-color;
+  }
+
+  .@{menu-item}__padding {
+    width: 0;
+    height: 0;
   }
 }
 

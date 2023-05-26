@@ -11,6 +11,10 @@ export const MenuPlugin: Plugin = {
   }
 }
 
+export * from './src/menu'
+export * from './src/menu-item'
+export * from './src/sub-menu'
+
 export default MenuPlugin
 
 export { Menu }

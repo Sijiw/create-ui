@@ -7,12 +7,31 @@
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
 import { menuProps } from './menu'
+import { ref } from 'vue'
+import { menuInjectionKey } from '@create-ui/tokens/menu'
+import { provide } from 'vue'
+import { reactive } from 'vue'
+import { toRefs } from 'vue'
 
 const ns = useNamespace('menu')
 const props = defineProps(menuProps)
 
-const level = 1
-const padding = 0
+const activeIndex = ref('')
+
+const changeActiveIndex = (index: string) => {
+  activeIndex.value = index
+}
+
+provide(
+  menuInjectionKey,
+  reactive({
+    ...toRefs(props),
+    activeIndex,
+    changeActiveIndex
+  })
+)
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+@import 'packages/styles/menu/menu.less';
+</style>
