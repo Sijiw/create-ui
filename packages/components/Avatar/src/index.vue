@@ -14,8 +14,6 @@ const props = defineProps(avatarProps)
 console.log(props)
 
 const ns = useNamespace('avatar')
-// 只有外部盒子需要类名
-// y-avatar y-avatar--size y-avatar--icon y-avatar--circle
 const classes = useAvatarClasses(props)
 </script>
 

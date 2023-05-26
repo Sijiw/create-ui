@@ -25,10 +25,7 @@ const { type, size, circle, round, disabled } = props
 
 // 获取namespace
 const ns = useNamespace('button')
-// const { _type, _size } = useButton(props)
-// 获取类名
 const classes: string[] = [
-  // baseName: y-button
   ns.baseName,
   ns.addModifier(type),
   ns.addModifier(size),

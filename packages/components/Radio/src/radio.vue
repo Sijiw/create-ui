@@ -38,10 +38,6 @@ const labelClasses = [ns.addElement('label')]
 
 const currentValue = ref(props.group[0].value)
 
-// const handleChange = (event: Event) => {
-//   console.log('change...', (event.target as HTMLInputElement).value)
-// }
-
 const handleInput = (event: Event) => {
   const selectedValue = (event.target as HTMLInputElement).value
   currentValue.value = selectedValue

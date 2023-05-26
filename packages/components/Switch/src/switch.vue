@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" class="c-switch--large" @click="handleClick">
+  <div :class="classes" @click="handleClick">
     <span v-if="$slots.prefix" :class="prefixClasses">
       <slot name="prefix"></slot>
     </span>
