@@ -19,7 +19,7 @@ import { Icon } from '@iconify/vue'
 // import { InputPlugin } from './components/Input'
 // import { RadioPlugin } from './components/Radio'
 // import { SwitchPlugin } from './components/Switch'
-import components from './components'
+import components from './component'
 
 const CreateUIPlugin: Plugin = {
   install(app: App) {
