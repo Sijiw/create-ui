@@ -7,11 +7,17 @@
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
 
-defineOptions({
-  name: 'CFooter'
-})
+// defineOptions({
+//   name: 'CFooter'
+// })
 
 const ns = useNamespace('footer')
+</script>
+
+<script lang="ts">
+export default {
+  name: 'CFooter'
+}
 </script>
 
 <style scoped lang="less">

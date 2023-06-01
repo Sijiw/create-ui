@@ -1,5 +1,5 @@
 <template>
-  <div
+  <li
     :class="[
       ns.baseName,
       ns.getClass('hidden', !isShow),
@@ -9,7 +9,7 @@
   >
     <span :class="[ns.addElement('padding')]" :style="paddingStyle"></span>
     <slot />
-  </div>
+  </li>
 </template>
 
 <script lang="ts" setup>

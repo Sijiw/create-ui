@@ -1,7 +1,7 @@
 export const sidebar = {
   '/': [
     {
-      text: 'Basic 基础组件',
+      text: '基础组件',
       items: [
         { text: 'Button 按钮', link: '/components/button/' },
         { text: 'Container 布局容器', link: '/components/container/' },
@@ -10,30 +10,32 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Form 表单组件',
+      text: '数据录入型组件',
       items: [
+        { text: 'Checkbox 多选框', link: '/components/checkbox/' },
+        { text: 'Form 表单', link: '/components/form/' },
         { text: 'Input 输入框', link: '/components/input/' },
-        { text: 'Radio 单选框', link: '/components/radio/' }
+        { text: 'Radio 单选框', link: '/components/radio/' },
+        { text: 'Switch 开关', link: '/components/switch/' }
       ]
     },
     {
-      text: 'Data 数据展示',
+      text: '数据展示型组件',
       items: [
+        { text: 'Avatar 头像', link: '/components/avatar/' },
+        { text: 'Card 卡片', link: '/components/card/' },
+        { text: 'Collapse 折叠面板', link: '/components/collapse/' },
+        { text: 'Image 图片', link: '/components/image/' },
         { text: 'Progress 进度条', link: '/components/progress/' },
-        { text: 'Avatar 头像', link: '/components/avatar/' }
+        { text: 'Table 表格', link: '/components/table/' }
+      ]
+    },
+    {
+      text: '导航组件',
+      items: [
+        { text: 'Link 链接', link: '/components/link/' },
+        { text: 'Menu 菜单', link: '/components/menu/' }
       ]
     }
-    // {
-    //   text: 'Navigation 导航组件',
-    //   items: []
-    // },
-    // {
-    //   text: 'Feedback 反馈组件',
-    //   items: []
-    // },
-    // {
-    //   text: 'Others 其他组件',
-    //   items: []
-    // }
   ]
 }

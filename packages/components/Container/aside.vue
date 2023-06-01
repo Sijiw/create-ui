@@ -7,11 +7,17 @@
 <script lang="ts" setup>
 import { useNamespace } from '@create-ui/hooks'
 
-defineOptions({
-  name: 'CAide'
-})
+// defineOptions({
+//   name: 'CAide'
+// })
 
 const ns = useNamespace('aside')
+</script>
+
+<script lang="ts">
+export default {
+  name: 'CAside'
+}
 </script>
 
 <style scoped lang="less">

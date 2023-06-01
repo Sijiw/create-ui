@@ -15,7 +15,9 @@
       </div>
     </div>
     <div :class="[ns.addBlock('items'), ns.getClass('open', open)]">
-      <slot />
+      <ul>
+        <slot />
+      </ul>
     </div>
   </div>
 </template>
@@ -27,20 +29,25 @@ import { subMenuInjectionKey } from 'packages/tokens/menu'
 import { reactive, provide, computed, ref } from 'vue'
 import { toRefs } from 'vue'
 import { inject } from 'vue'
+import { useSlots } from 'vue'
+import { VNode } from 'vue'
+import { CSSProperties } from 'vue'
 
 const ns = useNamespace('sub-menu')
 const props = defineProps(subMenuProps)
 const emits = defineEmits(['click'])
+const subMenuProvide = inject(subMenuInjectionKey, undefined)
 
 const primaryLevel = 1
 const primaryPadding = 0
-const subMenuProvide = inject(subMenuInjectionKey, undefined)
 const open = ref(false)
+
 const level = computed(() => {
   if (!subMenuProvide) return primaryLevel
 
   return subMenuProvide.level + 1
 })
+
 const padding = computed(() => {
   if (!subMenuProvide) return primaryPadding
 
@@ -52,6 +59,8 @@ const paddingStyle = computed(() => {
     'margin-right': `${padding.value}px`
   }
 })
+
+console.log(open.value)
 
 const handleClick = () => {
   open.value = !open.value

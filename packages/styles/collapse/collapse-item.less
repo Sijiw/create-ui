@@ -27,6 +27,15 @@
     justify-content: space-between;
     margin: @margin-size 0;
     cursor: pointer;
+
+    .@{collapse-item}-header__left {
+      display: flex;
+      align-items: center;
+
+      .@{collapse-item}-header__title {
+        margin-right: 8px;
+      }
+    }
   }
 
   .@{collapse-item}-content {

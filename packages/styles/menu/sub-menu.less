@@ -9,6 +9,7 @@
   .@{sub-menu}-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 12px 8px;
     &:hover {
       @hover-bg-color: .useRootCssVar(color-primary-light-9)[@return];
@@ -16,6 +17,8 @@
     }
 
     .@{sub-menu}__text {
+      display: flex;
+      align-items: center;
       flex: 1;
     }
 
@@ -29,8 +32,13 @@
   .@{sub-menu}-items {
     display: grid;
     grid-template-rows: 0fr;
+    overflow: hidden;
 
-    transition: all .3s;
+    & > ul {
+      overflow: hidden;
+    }
+
+    transition: all .2s;
     &.open {
       grid-template-rows: 1fr;
     }

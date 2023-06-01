@@ -47,15 +47,10 @@ const trigger = formItemProvide?.trigger
 const inputError = ref(false)
 const isError = computed(() => {
   let res = false
-  // if (inputError.value) res = true
-  // console.log(formItemProvide?.isError)
-
-  // console.log(res)
   if (formItemProvide?.isError) res = true
 
   return res
 })
-// console.log(formItemRef.value)
 
 const clearVisible = computed(
   () => props.modelValue !== undefined && props.modelValue.length !== 0
@@ -75,17 +70,6 @@ const inputInnerClasses = [ns.addBlock('inner')]
 const clearableClasses = [ns.addBlock('clearable')]
 const prefixClasses = [ns.addBlock('prefix')]
 const suffixClasses = [ns.addBlock('suffix')]
-
-// const inputValidate = () => {
-//   formItemProvide
-//     ?.validate()
-//     ?.then(() => {
-//       inputError.value = false
-//     })
-//     ?.catch(() => {
-//       inputError.value = true
-//     })
-// }
 
 const inputValidate = () => {
   if (!formItemProvide?.prop) return

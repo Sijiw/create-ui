@@ -6,7 +6,7 @@
     ]"
   >
     <div :class="ns.addBlock('header')" @click="handleClick">
-      <div>
+      <div :class="ns.addBE('header', 'left')">
         <span :class="ns.addBE('header', 'title')">{{ title }}</span>
         <span :class="ns.addBE('header', 'icon')" v-if="icon">
           <Icon :icon="icon"></Icon>
@@ -42,10 +42,18 @@ const collapseProvide = inject(collapseInjectionKey, undefined)
 const visible = ref(false)
 const shouldOpen = computed(() => {
   if (props.name && collapseProvide?.activeKey) {
-    console.log('active key:', collapseProvide.activeKey)
-    console.log('name:', props.name)
-    // nextTick()
-    return props.name === collapseProvide.activeKey
+    // return props.name === collapseProvide.activeKey && visible.value
+    if (visible.value) {
+      // return props.name === collapseProvide.activeKey
+      if (props.name !== collapseProvide.activeKey) {
+        visible.value = false
+        return false
+      } else {
+        return true
+      }
+    } else {
+      return false
+    }
   } else {
     return visible.value
   }

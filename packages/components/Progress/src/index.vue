@@ -14,8 +14,8 @@
     </div>
     <!-- text part with line-->
     <div :class="outerTextClasses" v-if="!textInside">
-      <span v-if="!status">{{ `${percentage}%` }}</span>
-      <i v-else></i>
+      <span>{{ `${percentage}%` }}</span>
+      <!-- <i v-else></i> -->
     </div>
   </div>
 </template>
@@ -26,9 +26,6 @@ import { onMounted, reactive, ref } from 'vue'
 import { progressProps, useInnerStyle, useBarStyle } from './progress'
 
 const progressRef = ref()
-// onMounted(() => {
-//   console.log(progressRef)
-// })
 
 const ns = useNamespace('progress')
 const props = defineProps(progressProps)

@@ -1,7 +1,32 @@
 @import "../mixins.less";
+@import "../theme/color.less";
 
 @button: .useComponent(button)[@return];
 @icon: .useComponent(icon)[@return];
+
+.set-colors(@index) when(@index <= @themeLen) {
+  @currentTheme: extract(@themes, @index);
+
+  .@{button}--@{currentTheme} {
+    color: #fff;
+    background-color: .useRootCssVar(~'color-@{currentTheme}')[@return];
+    &:hover {
+      background-color: .useRootCssVar(~'color-@{currentTheme}-light-3')[@return];
+    }
+
+    &.disabled{ 
+      .disabled();
+      --button-color: .useRootCssVar(~'color-@{currentTheme}-light-7')[@return];
+      background-color: var(--button-color);
+      &:hover {
+        background-color: var(--button-color);
+      }
+    }
+  }
+
+  .set-colors(@index + 1);
+}
+
 .button-mixin() {
   // box-sizing: content-box;
   display: inline-flex;
@@ -9,9 +34,10 @@
   align-items: center;
   cursor: pointer;
   // color
-  .set-component-var(button, hover-bg-color, #fff);
   .set-component-var(button, bg-color, #fff);
   .set-component-var-root(button, text-color, color-primary-text);
+
+  @hover-bg-color: .useRootCssVar(color-primary-light-9)[@return];
   
   color: .useComponentCssVar(button, text-color)[@return];
   background-color: .useComponentCssVar(button, bg-color)[@return];
@@ -34,7 +60,7 @@
   }
 
   &:hover {
-    background-color: .useComponentCssVar(button, hover-bg-color)[@return];
+    background-color: @hover-bg-color;
   }
 
   &:active {
@@ -89,3 +115,4 @@
 @buttonMixin: .button-mixin();
 
 .set-component(button, @buttonMixin);
+.set-colors(1);

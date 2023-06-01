@@ -1,9 +1,12 @@
 {
-  "name": "create-ui",
-  "private": true,
+  "name": "create-ui-sijiw-test",
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
+  ],
+  "module": "./dist/create-ui.es.js",
+  "files": [
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
@@ -11,7 +14,7 @@
     "preview": "vite preview",
     "gen": "node ./script/genNewComp/index.js && npm run updateDeps",
     "updateDeps": "node ./script/genNewComp/updateDeps.js && npm run formatDeps",
-    "formatDeps": "npx prettier --write ./src/routes.ts ./packages/components.ts",
+    "formatDeps": "npx prettier --write ./src/routes.ts ./packages/component.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",

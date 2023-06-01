@@ -30,7 +30,6 @@ const ns = useNamespace('form-item')
 const props = defineProps(formItemProps)
 const formItemRef = ref<FormItemInstance>()
 const formProvides = inject(formInjectionKey, undefined)
-// const errors = formProvides?.formState.errors
 const formItemDescriptor = computed(() => {
   if (!props.prop || !formProvides?.rules[props.prop]) return {} as Rules
   return { [props.prop]: formProvides.rules[props.prop] }

@@ -14,10 +14,10 @@ Create-UI 内置了5个布局组件，你可以使用以下组件来搭配你的
 
 > 当容器里有`Aside`组件，整个容器会变成横向排列的Flex盒子，如果另一边需要垂直分布，则需要再嵌套一层`Container`组件。
 
-<!-- <preview path="./demo1.vue" title="?" description="?"></preview> -->
+<preview path="./demo1.vue" title="?" description="?"></preview>
 
 <style>
-.y-header {
+.c-header {
   background-color: #70f3ff;
 }
 </style>
