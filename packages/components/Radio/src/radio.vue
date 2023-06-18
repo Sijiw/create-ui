@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { ref } from 'vue'
 import { radioProps } from './radio'
 

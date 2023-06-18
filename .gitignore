@@ -10,7 +10,6 @@ lerna-debug.log*
 node_modules
 /dist
 /src
-/script
 /build
 /docs/.vitepress/dist
 dist-ssr

@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { onMounted, reactive, ref } from 'vue'
 import { progressProps, useInnerStyle, useBarStyle } from './progress'
 

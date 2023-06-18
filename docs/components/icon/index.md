@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import IconProps from './icon-props.vue'
+import IconSlots from './icon-slots.vue'
+</script>
+
 # Icon 图标
 
 Create UI 并没有提供一套属于自己的图标库，但是通过封装@Iconify/vue的组件，你可以使用icones.js里的全部图标。
@@ -30,3 +35,13 @@ Create UI 并没有提供一套属于自己的图标库，但是通过封装@Ico
 如果你有自己的svg图标，你可以直接复制svg在图标标签中。
 
 <preview path="./icon-demo04.vue" title="Icon" description="."></preview>
+
+## Icon API
+
+### Icon属性
+
+<icon-props></icon-props>
+
+### Icon插槽
+
+<icon-slots></icon-slots>

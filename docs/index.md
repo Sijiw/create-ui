@@ -2,24 +2,24 @@
 layout: home
 
 title: Create-UI
-titleTemplate: 一个Vue3组件库
+titleTemplate: 基于Vue3的组件库
 
 hero:
   name: Create-UI
-  text: 一个Vue3组件库
+  text: 基于Vue3的组件库
   actions:
     - theme: brand
-      text: 开始
+      text: 使用文档
       link: /components/button/
 
 features:
   - icon: ⚡️
     title: 快速
-    details: 使用Vite构建，打包和运行非常迅速
+    details: 使用Vite构建和打包，体积小
   - icon: ✔
-    title: 安全易用
+    title: 新特性支持
     details: 使用Vue3+TS编写
   - icon: ✨
-    title: 美观
-    details: 参考Element的UI设计风格和配色
+    title: 组件丰富
+    details: 4大类型组件，20+种组件
 ---

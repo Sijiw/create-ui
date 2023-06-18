@@ -17,7 +17,7 @@ import {
   useButtonStyle,
   useDisabledStyle
 } from './button'
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { Icon } from 'packages/components/Icon'
 
 const props = defineProps(buttonProps)

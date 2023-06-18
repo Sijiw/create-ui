@@ -7,5 +7,8 @@ export const tableProps = {
   },
   height: {
     type: [String, Number] as PropType<string | number>
+  },
+  stript: {
+    type: Boolean
   }
 } as const

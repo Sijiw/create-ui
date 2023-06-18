@@ -9,7 +9,12 @@
       <tbody :class="ns.addBlock('body')">
         <tr
           v-for="(dataItem, dataIndex) in data"
-          :class="ns.getClass(ns.addModifier('stripe'), dataIndex % 2 === 1)"
+          :class="
+            ns.getClass(
+              ns.addModifier('stripe'),
+              dataIndex % 2 === 1 && props.stript
+            )
+          "
         >
           <td v-for="prop in columnProps">
             {{ dataItem[prop] }}
@@ -21,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { tableProps } from './table'
 import type { TableColumnProps } from './table-column'
 import { computed, useSlots } from 'vue'

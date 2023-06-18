@@ -1,3 +1,8 @@
+<script setup>
+import CardProps from './card-props.vue'
+import CardSlots from './card-slots.vue'
+</script>
+
 # Card 卡片
 
 卡片用于包裹任意形式的信息。
@@ -17,3 +22,11 @@
 <preview path="./card-interact.vue" title="." description="."></preview>
 
 ## Card API
+
+### Card 属性
+
+<card-props></card-props>
+
+### Card 插槽
+
+<card-slots></card-slots>

@@ -31,7 +31,7 @@ export const useInnerStyle = (props: ProgressProps) => {
     width: `${props.percentage}%`
   }
   if (props.status) {
-    innerStyle['background-color'] = `var(--y-color-${props.status})`
+    innerStyle['background-color'] = `var(--c-color-${props.status})`
   }
   return innerStyle
 }

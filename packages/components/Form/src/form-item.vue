@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
-import { formItemInjectionKey, formInjectionKey } from '@create-ui/tokens'
+import { useNamespace } from 'packages/hooks'
+import { formItemInjectionKey, formInjectionKey } from 'packages/tokens'
 import { formItemProps } from './form-item'
 import { computed, inject, provide, reactive, ref } from 'vue'
 import AsyncValidator, {

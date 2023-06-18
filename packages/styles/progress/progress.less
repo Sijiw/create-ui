@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   // var part
-  .set-component-var-root(@progress, bg-color, color-primary);
+  // .set-component-var-root(@progress, bg-color, color-primary);
   // size part
   max-width: 400px;
   width: 350px;
@@ -37,7 +37,7 @@
         background-color: .useComponentCssVar(@progress, bg-color);
 
         .@{progress}-bar__innerText {
-          font-size: calc(var(--y-font-size) + 2px);
+          font-size: calc(14px + 2px);
           margin-right: 5px;
           color: #fff;
         }
@@ -48,7 +48,7 @@
   .@{progress}__text {
     min-width: 20px;
     line-height: 1;
-    font-size: var(--y-font-size);
+    font-size: 14px;
   }
 
   &.@{progress}--line {

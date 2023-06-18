@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { imageProps } from './image'
 import { computed } from 'vue'
 
@@ -24,6 +24,14 @@ const imageInnerStyle = computed(() => {
 
   if (props.fit) {
     res['object-fit'] = props.fit
+  }
+
+  if (props.width) {
+    res['width'] = `${props.width}px`
+  }
+
+  if (props.height) {
+    res['height'] = `${props.height}px`
   }
 
   return res

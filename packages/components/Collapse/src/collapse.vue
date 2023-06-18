@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { collapseProps } from './collapse'
 import { collapseInjectionKey } from 'packages/tokens'
 import { provide, ref, toRefs } from 'vue'

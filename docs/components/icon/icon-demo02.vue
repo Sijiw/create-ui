@@ -1,5 +1,4 @@
 <template>
-  <c-icon icon="ant-design:car-filled"></c-icon>
   <c-icon icon="ant-design:car-filled" color="pink" size="40"></c-icon>
 </template>
 

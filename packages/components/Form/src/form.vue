@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
-import type { FormState } from '@create-ui/tokens'
-import { formInjectionKey } from '@create-ui/tokens'
+import { useNamespace } from 'packages/hooks'
+import type { FormState } from 'packages/tokens'
+import { formInjectionKey } from 'packages/tokens'
 import { formProps } from './form'
 import { provide, reactive } from 'vue'
 import { toRefs } from 'vue'

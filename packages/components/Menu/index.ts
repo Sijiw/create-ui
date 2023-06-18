@@ -17,4 +17,4 @@ export * from './src/sub-menu'
 
 export default MenuPlugin
 
-export { Menu }
+export { Menu, SubMenu, MenuItem }

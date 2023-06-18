@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { subMenuProps } from './sub-menu'
 import { subMenuInjectionKey } from 'packages/tokens/menu'
 import { reactive, provide, computed, ref } from 'vue'

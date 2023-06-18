@@ -1,5 +1,6 @@
 import { Plugin } from 'vue'
 import CAvatar from '@create-ui/components/Avatar'
+import CBar from '@create-ui/components/Bar'
 import CBreadcrumb from '@create-ui/components/Breadcrumb'
 import CButton from '@create-ui/components/Button'
 import CCard from '@create-ui/components/Card'
@@ -23,6 +24,7 @@ import CTable from '@create-ui/components/Table'
 
 export default [
   CAvatar,
+  CBar,
   CBreadcrumb,
   CButton,
   CCard,

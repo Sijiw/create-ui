@@ -1,12 +1,12 @@
 {
-  "name": "create-ui-sijiw-test",
-  "version": "0.0.0",
+  "name": "create-ui-sijiw",
+  "version": "0.0.5",
   "workspaces": [
     "packages/*"
   ],
   "module": "./dist/create-ui.es.js",
   "files": [
-    "dist"
+    "dist/*"
   ],
   "scripts": {
     "dev": "vite",
@@ -21,9 +21,6 @@
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts"
   },
   "dependencies": {
-    "@create-ui/components": "workspace:^0.0.0",
-    "@create-ui/hooks": "workspace:^0.0.0",
-    "@create-ui/tokens": "workspace:^0.0.0",
     "@vue/shared": "^3.2.47",
     "@vueuse/core": "^9.13.0",
     "async-validator": "^4.2.5",

@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { breadcrumbProps } from './breadcrumb'
 
 const ns = useNamespace('breadcrumb')

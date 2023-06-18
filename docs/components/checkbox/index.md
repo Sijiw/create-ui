@@ -1,3 +1,8 @@
+<script setup>
+import CheckboxGroupProps from './checkbox-group-props.vue'
+import CheckboxProps from './checkbox-props.vue'
+</script>
+
 # Checkbox 多选框
 
 多选框组件用于给用户选择多项数据。
@@ -15,3 +20,11 @@
 <preview path="./checkbox-basic.vue" title="." description="."></preview>
 
 ## Checkbox API
+
+### Checkbox Group属性
+
+<checkbox-group-props></checkbox-group-props>
+
+### Checkbox属性
+
+<checkbox-props></checkbox-props>

@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { menuProps } from './menu'
 import { ref } from 'vue'
-import { menuInjectionKey } from '@create-ui/tokens/menu'
+import { menuInjectionKey } from 'packages/tokens/menu'
 import { provide } from 'vue'
 import { reactive } from 'vue'
 import { toRefs } from 'vue'

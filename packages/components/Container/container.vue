@@ -4,9 +4,15 @@
   </section>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'CContainer'
+}
+</script>
+
 <script lang="ts" setup>
 import { Component, computed, useSlots, VNode } from 'vue'
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 
 const ns = useNamespace('container')
 const slots = useSlots()
@@ -15,17 +21,18 @@ const isVertical = computed(() => {
     const vNodes: VNode[] = slots.default()
     return !vNodes.some((vNode) => {
       const compName = (vNode.type as Component).name
-      return compName === 'CAide'
+      console.log(compName)
+
+      return compName === 'CAside'
     })
   } else {
     return true
   }
 })
 
-const classes: string[] = [
-  ns.baseName,
-  ns.getClass('isVertical', isVertical.value)
-]
+const classes = computed(() => {
+  return [ns.baseName, ns.getClass('isVertical', isVertical.value)]
+})
 </script>
 
 <style scoped lang="less">

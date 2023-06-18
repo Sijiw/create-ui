@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { tableColumnProps } from './table-column'
 
 const ns = useNamespace('table-column')

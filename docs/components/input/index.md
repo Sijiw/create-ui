@@ -1,3 +1,8 @@
+<script setup>
+import InputProps from './input-props.vue'
+import InputSlots from './input-slots.vue'
+</script>
+
 # Input 输入框
 
 输入框组件。
@@ -37,3 +42,13 @@
 你可以传入`disabled`属性来禁用输入框
 
 <preview path="./disabled.vue" title="." description="."></preview>
+
+## Input API
+
+### Input 属性
+
+<input-props></input-props>
+
+### Input 插槽
+
+<input-slots></input-slots>

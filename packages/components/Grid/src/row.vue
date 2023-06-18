@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { rawProps } from './row'
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { CSSProperties } from 'vue'
 import { computed } from 'vue'
 
@@ -16,7 +16,7 @@ const classes = [ns.baseName]
 const styles = computed<CSSProperties>(() => {
   return {
     'justify-content': props.justify ? props.justify : '',
-    '--gutter-size': props.gutter ? props.gutter : ''
+    '--gutter-size': props.gutter ? `${props.gutter}px` : ''
   }
 })
 </script>

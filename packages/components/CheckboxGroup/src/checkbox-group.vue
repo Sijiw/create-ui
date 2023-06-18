@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { checkboxGroupProps } from './checkbox-group'
 import { reactive } from 'vue'
-import CCheckbox from '@create-ui/components/Checkbox/src/checkbox.vue'
+import CCheckbox from 'packages/components/Checkbox/src/checkbox.vue'
 
 const ns = useNamespace('checkbox-group')
 const props = defineProps(checkboxGroupProps)

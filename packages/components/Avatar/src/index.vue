@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { computed } from 'vue'
 import { avatarProps, useAvatarClasses } from './avatar'
 

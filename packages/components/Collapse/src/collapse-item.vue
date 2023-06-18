@@ -27,10 +27,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { collapseItemProps } from './collapse-item'
 import { computed, ref } from 'vue'
-import CIcon from '@create-ui/components/Icon/src/icon.vue'
+import CIcon from 'packages/components/Icon/src/icon.vue'
 import { inject } from 'vue'
 import { collapseInjectionKey } from 'packages/tokens'
 import { nextTick } from 'vue'

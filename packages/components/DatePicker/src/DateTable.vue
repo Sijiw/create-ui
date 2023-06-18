@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { computed, ref } from 'vue'
 import { getDateTable, DateTableItem } from './date-utils'
 import { dateTableProps } from './DateTable'

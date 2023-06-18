@@ -1,0 +1,37 @@
+:root {
+  --c-color-primary: #0058ff;
+  --c-color-primary-light-3: #4d8aff;
+  --c-color-primary-light-5: #80acff;
+  --c-color-primary-light-7: #b3cdff;
+  --c-color-primary-light-8: #ccdeff;
+  --c-color-primary-light-9: #e6eeff;
+  --c-color-primary-dark-2: #0046cc;
+  --c-color-success: #234004;
+  --c-color-success-light-3: #65794f;
+  --c-color-success-light-5: #91a082;
+  --c-color-success-light-7: #bdc6b4;
+  --c-color-success-light-8: #d3d9cd;
+  --c-color-success-light-9: #e9ece6;
+  --c-color-success-dark-2: #1c3303;
+  --c-color-danger: #ff00a7;
+  --c-color-danger-light-3: #ff4dc1;
+  --c-color-danger-light-5: #ff80d3;
+  --c-color-danger-light-7: #ffb3e5;
+  --c-color-danger-light-8: #ffcced;
+  --c-color-danger-light-9: #ffe6f6;
+  --c-color-danger-dark-2: #cc0086;
+  --c-color-warning: #ffd100;
+  --c-color-warning-light-3: #ffdf4d;
+  --c-color-warning-light-5: #ffe880;
+  --c-color-warning-light-7: #fff1b3;
+  --c-color-warning-light-8: #fff6cc;
+  --c-color-warning-light-9: #fffae6;
+  --c-color-warning-dark-2: #cca700;
+  --c-color-info: #000000;
+  --c-color-info-light-3: #4d4d4d;
+  --c-color-info-light-5: #808080;
+  --c-color-info-light-7: #b3b3b3;
+  --c-color-info-light-8: #cccccc;
+  --c-color-info-light-9: #e6e6e6;
+  --c-color-info-dark-2: #000000;
+}

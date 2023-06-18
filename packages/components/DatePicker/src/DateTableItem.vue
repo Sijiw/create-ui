@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { dateTableItemProps } from './DateTable'
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { computed } from 'vue'
 
 const ns = useNamespace('table')

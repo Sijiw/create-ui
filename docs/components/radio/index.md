@@ -1,3 +1,7 @@
+<script setup>
+import RadioProps from './radio-props.vue'
+</script>
+
 # Radio 单选框
 
 单选框组件
@@ -12,3 +16,9 @@
 你还需要传入一个`name`属性，以便能够通过点击文字来选中选项。
 
 <preview path="./basic.vue" title="." description="."></preview>
+
+## Radio API
+
+### Radio 属性
+
+<radio-props></radio-props>

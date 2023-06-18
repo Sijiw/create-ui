@@ -10,7 +10,7 @@
 
   &:hover {
     .@{radio}__inner {
-      border-color: var(--y-color-primary);
+      border-color: .useRootCssVar(color-primary)[@return];
     }
   }
 
@@ -22,7 +22,7 @@
     }
 
     .@{radio}__inner {
-      background-color: var(--y-color-primary);
+      background-color: .useRootCssVar(color-primary)[@return];
       &::after {
         position: absolute;
         left: 50%;
@@ -58,7 +58,7 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      border: 1px solid var(--y-color-border);
+      border: 1px solid .useRootCssVar(color-border-base)[@return];
       transition: all 0.3s;
     }
   }

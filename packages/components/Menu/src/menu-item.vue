@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { menuItemProps } from './menu-item'
 import { computed, inject, ref } from 'vue'
 import { menuInjectionKey, subMenuInjectionKey } from 'packages/tokens/menu'

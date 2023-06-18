@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { cardProps } from './card'
 import { computed } from 'vue'
 

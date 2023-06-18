@@ -1,4 +1,6 @@
 <script setup>
+import buttonProps from './button-props.vue'
+import ButtonSlots from './button-slots.vue'
 </script>
 
 # Button 按钮
@@ -25,18 +27,22 @@ Button有颜色属性 `type` , 外形属性 `circle` 、 `round` , 可组合使�
 
 ### Button属性
 
-|  属性名  |      说明      |                                   类型                                   |    默认值   |
+<buttonProps></buttonProps>
+
+<!-- |  属性名  |      说明      |                                   类型                                   |    默认值   |
 |:--------:|:--------------:|:------------------------------------------------------------------------:|:-----------:|
 |   size   |   Button尺寸   | `'large' \| 'default' \| 'small'` | `'dafault'` |
 |   type   |   Button类型   | `'primary' \| 'default' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'default'` |
 |   round  | 是否为圆角按钮 | `boolean` | `false` |
 |  circle  | 是否为圆形按钮 | `boolean` | `false` |
 | disabled | 是否为禁用状态 | `boolean` | `false` |
-|   icon   |    图标名称    | `string` |      ——     |
+|   icon   |    图标名称    | `string` |      ——     | -->
 
 ### Button插槽
 
-|  插槽名 |       说明       |
+<button-slots></button-slots>
+
+<!-- |  插槽名 |       说明       |
 |:-------:|:----------------:|
 | default | Button自定义内容 |
-|   icon  |    自定义图标    |
+|   icon  |    自定义图标    | -->

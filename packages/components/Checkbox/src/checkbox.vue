@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { checkboxProps } from './checkbox'
 import { ref, reactive } from 'vue'
 
@@ -32,7 +32,12 @@ const handleInput = (e: Event) => {
   checkState.value = !checkState.value
 
   emits('notifyFather', [checkState.value, props.value])
-  emits('update:modelValue', (e.target as HTMLInputElement).value)
+  if (checkState.value) {
+    // emits('update:modelValue', (e.target as HTMLInputElement).value)
+    emits('update:modelValue', props.value)
+  } else {
+    emits('update:modelValue', '')
+  }
 }
 </script>
 

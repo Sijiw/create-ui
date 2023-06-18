@@ -2,7 +2,7 @@ import type {
   FormProps,
   FormItemProps,
   FormItemInstance
-} from '@create-ui/components/Form'
+} from 'packages/components/Form'
 import type { Rules } from 'async-validator/dist-types/interface'
 import type { ValidateFieldsError } from 'async-validator/dist-types/interface'
 import { ComputedRef, InjectionKey } from 'vue'

@@ -31,10 +31,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useNamespace } from '@create-ui/hooks'
+import { useNamespace } from 'packages/hooks'
 import { computed, inject, ref, watch } from 'vue'
 import { inputProps } from './input'
-import { formItemInjectionKey, formInjectionKey } from '@create-ui/tokens'
+import { formItemInjectionKey, formInjectionKey } from 'packages/tokens'
 import { nextTick } from 'vue'
 
 const ns = useNamespace('input')
